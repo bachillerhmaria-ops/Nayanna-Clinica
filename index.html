@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nayanna Medicina Estética | Rivas-Vaciamadrid</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f3ef;
+      color: #2b2420;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    .navbar {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(248,243,239,.92);
+      backdrop-filter: blur(14px);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 22px 7%;
+      border-bottom: 1px solid #e5d8cf;
+    }
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: #8b5e4b;
+    }
+    nav { display: flex; gap: 28px; font-size: 15px; }
+
+    .btn {
+      display: inline-block;
+      background: #8b5e4b;
+      color: white;
+      padding: 14px 26px;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: .3s;
+    }
+    .btn:hover { background: #6f4636; transform: translateY(-2px); }
+    .btn.secondary {
+      background: transparent;
+      color: #8b5e4b;
+      border: 1px solid #8b5e4b;
+    }
+    .btn.small { padding: 10px 18px; font-size: 14px; }
+
+    .hero {
+      min-height: 85vh;
+      padding: 120px 7%;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(rgba(248,243,239,.65), rgba(248,243,239,.95)),
+        url("https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+    }
+    .hero-content { max-width: 720px; }
+    .tag {
+      color: #8b5e4b;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(44px, 7vw, 82px);
+      line-height: 1.05;
+      margin: 18px 0;
+    }
+    h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(34px, 5vw, 56px);
+      margin: 12px 0 35px;
+    }
+    .hero p {
+      font-size: 20px;
+      max-width: 620px;
+      margin-bottom: 32px;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 50px 7%;
+      background: #2b2420;
+      color: white;
+    }
+    .stats div { text-align: center; }
+    .stats h3 {
+      font-size: 38px;
+      color: #e8c7b0;
+    }
+
+    .section { padding: 95px 7%; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+    .card {
+      background: white;
+      padding: 34px;
+      border-radius: 28px;
+      box-shadow: 0 18px 45px rgba(43,36,32,.08);
+      border: 1px solid #eee1d9;
+    }
+    .card.featured {
+      background: #8b5e4b;
+      color: white;
+    }
+    .card h3 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+    .meta {
+      color: #b9886e;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .featured .meta { color: #f4d5c3; }
+
+    .service-grid {
+      margin-top: 45px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .service-grid div {
+      background: #efe3dc;
+      padding: 22px;
+      border-radius: 20px;
+      font-weight: 700;
+      color: #5c3a2d;
+    }
+
+    .reviews { background: #fffaf7; }
+
+    .about {
+      background: #2b2420;
+      color: white;
+    }
+    .about p {
+      max-width: 780px;
+      font-size: 19px;
+    }
+
+    .contact {
+      text-align: center;
+      padding: 90px 7%;
+      background: #efe3dc;
+    }
+    .contact p { margin-bottom: 8px; }
+    .schedule { margin: 25px 0; }
+
+    footer {
+      text-align: center;
+      padding: 28px;
+      background: #2b2420;
+      color: white;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      nav { display: none; }
+      .stats, .cards, .service-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        min-height: auto;
+        padding: 90px 7%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">Nayanna</div>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#resenas">Reseñas</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <a class="btn small" href="#contacto">Reservar</a>
+</header>
+
+<section id="inicio" class="hero">
+  <div class="hero-content">
+    <span class="tag">Centro médico estético en Rivas-Vaciamadrid</span>
+    <h1>Belleza, bienestar y medicina estética personalizada</h1>
+    <p>
+      Tratamientos faciales, corporales, depilación láser, aparatología avanzada
+      y medicina estética para realzar tu mejor versión.
+    </p>
+    <div class="hero-buttons">
+      <a href="#contacto" class="btn">Reservar cita</a>
+      <a href="#servicios" class="btn secondary">Ver tratamientos</a>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div>
+    <h3><span class="counter" data-target="8">0</span>+</h3>
+    <p>Años de experiencia</p>
+  </div>
+  <div>
+    <h3><span class="counter" data-target="500">0</span>+</h3>
+    <p>Pacientes satisfechos</p>
+  </div>
+  <div>
+    <h3><span class="counter" data-target="40">0</span>+</h3>
+    <p>Tratamientos disponibles</p>
+  </div>
+  <div>
+    <h3>5 min</h3>
+    <p>Del Metro Rivas Futura</p>
+  </div>
+</section>
+
+<section id="servicios" class="section">
+  <span class="tag">Nuestros tratamientos</span>
+  <h2>Servicios destacados</h2>
+
+  <div class="cards">
+    <article class="card featured">
+      <h3>Limpieza Ritual Sublime</h3>
+      <p class="meta">1 h 30 min · 55 €</p>
+      <p>
+        Purifica, oxigena y aporta frescura inmediata a la piel. Ideal para pieles
+        jóvenes que buscan prevenir imperfecciones y mantener un rostro luminoso.
+      </p>
+    </article>
+
+    <article class="card">
+      <h3>Limpieza Ritual con Punta de Diamante</h3>
+      <p class="meta">1 h 30 min · 79 €</p>
+      <p>
+        Microdermoabrasión para exfoliar en profundidad, mejorar textura y atenuar
+        manchas leves o marcas de acné.
+      </p>
+    </article>
+
+    <article class="card">
+      <h3>Limpieza Ritual Hidrafacial</h3>
+      <p class="meta">1 h 30 min · 79 €</p>
+      <p>
+        Higiene con espátula ultrasónica, cóctel vitamínico y mascarilla regeneradora.
+        Oxigena, descongestiona y revitaliza la piel.
+      </p>
+    </article>
+  </div>
+
+  <div class="service-grid">
+    <div>Faciales y limpieza facial</div>
+    <div>Medicina estética facial</div>
+    <div>Aparatología facial y corporal</div>
+    <div>Depilación láser diodo</div>
+    <div>Depilación con cera</div>
+    <div>Micropigmentación</div>
+    <div>Plasmapen y rejuvenecimiento</div>
+    <div>Tratamientos capilares y corporales</div>
+  </div>
+</section>
+
+<section id="resenas" class="section reviews">
+  <span class="tag">Opiniones reales</span>
+  <h2>Lo que dicen nuestras pacientes</h2>
+
+  <div class="cards">
+    <article class="card">
+      <p>“Salí encantada con la limpieza facial. La piel se quedó súper limpia, luminosa y suave desde el primer momento.”</p>
+      <strong>Laura</strong>
+    </article>
+    <article class="card">
+      <p>“Nayanna es muy atenta y profesional. El tratamiento facial fue muy completo, dejándome la cara muy limpia e hidratada.”</p>
+      <strong>Mika</strong>
+    </article>
+    <article class="card">
+      <p>“Me hice un tratamiento de radiofrecuencia y estoy asombrada con el resultado. Me veo radiante.”</p>
+      <strong>Pek</strong>
+    </article>
+  </div>
+</section>
+
+<section class="section about">
+  <div>
+    <span class="tag">Sobre el centro</span>
+    <h2>Nayanna Medicina Estética</h2>
+    <p>
+      Un espacio acogedor, profesional y cercano donde cada tratamiento se adapta
+      a las necesidades de cada paciente para conseguir resultados naturales,
+      visibles y seguros.
+    </p>
+  </div>
+</section>
+
+<section id="contacto" class="contact">
+  <h2>Reserva tu cita</h2>
+  <p>Av. Aurelio Álvarez, 4, 28521 Rivas-Vaciamadrid, Madrid</p>
+  <p>A 5 minutos andando de Metro Rivas Futura</p>
+
+  <div class="schedule">
+    <p><strong>Lunes a viernes:</strong> 10:00 – 20:00</p>
+    <p><strong>Sábado:</strong> 10:00 – 14:00</p>
+    <p><strong>Domingo:</strong> Cerrado</p>
+  </div>
+
+  <a class="btn" href="https://wa.me/34XXXXXXXXX" target="_blank">
+    Reservar por WhatsApp
+  </a>
+</section>
+
+<footer>
+  <p>© 2026 Nayanna Medicina Estética · Rivas-Vaciamadrid</p>
+</footer>
+
+<script>
+  const counters = document.querySelectorAll(".counter");
+
+  const animateCounter = (counter) => {
+    const target = Number(counter.dataset.target);
+    let current = 0;
+    const increment = target / 80;
+
+    const update = () => {
+      current += increment;
+      if (current < target) {
+        counter.textContent = Math.ceil(current);
+        requestAnimationFrame(update);
+      } else {
+        counter.textContent = target;
+      }
+    };
+
+    update();
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.6 });
+
+  counters.forEach((counter) => observer.observe(counter));
+</script>
+
+</body>
+</html>

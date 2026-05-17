@@ -4,342 +4,785 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nayanna Medicina Estética | Rivas-Vaciamadrid</title>
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: Arial, sans-serif;
-      background: #f8f3ef;
-      color: #2b2420;
-      line-height: 1.6;
+    :root{
+      --black:#050505;
+      --dark:#0d0d0d;
+      --white:#ffffff;
+      --soft:#f5f7f8;
+      --gray:#9b9b9b;
+      --turq:#35f3e6;
+      --turq2:#00b8c8;
+      --line:rgba(255,255,255,.12);
     }
-    a { text-decoration: none; color: inherit; }
 
-    .navbar {
-      position: sticky; top: 0; z-index: 10;
-      background: rgba(248,243,239,.92);
-      backdrop-filter: blur(14px);
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 22px 7%;
-      border-bottom: 1px solid #e5d8cf;
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family: Inter, Arial, sans-serif;
+      background:var(--black);
+      color:var(--white);
+      overflow-x:hidden;
     }
-    .logo {
-      font-family: Georgia, serif;
-      font-size: 28px;
-      font-weight: 600;
-      color: #8b5e4b;
-    }
-    nav { display: flex; gap: 28px; font-size: 15px; }
 
-    .btn {
-      display: inline-block;
-      background: #8b5e4b;
-      color: white;
-      padding: 14px 26px;
-      border-radius: 999px;
-      font-weight: 600;
-      transition: .3s;
-    }
-    .btn:hover { background: #6f4636; transform: translateY(-2px); }
-    .btn.secondary {
-      background: transparent;
-      color: #8b5e4b;
-      border: 1px solid #8b5e4b;
-    }
-    .btn.small { padding: 10px 18px; font-size: 14px; }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
 
-    .hero {
-      min-height: 85vh;
-      padding: 120px 7%;
-      display: flex;
-      align-items: center;
+    .noise{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.06;
+      z-index:999;
+      background-image:url("https://grainy-gradients.vercel.app/noise.svg");
+    }
+
+    .navbar{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:50;
+      padding:22px 7%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(5,5,5,.55);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--line);
+    }
+
+    .logo{
+      font-size:22px;
+      font-weight:800;
+      letter-spacing:.5px;
+    }
+
+    .logo span{color:var(--turq)}
+
+    nav{
+      display:flex;
+      gap:30px;
+      font-size:14px;
+      color:#d8d8d8;
+    }
+
+    nav a{
+      position:relative;
+      transition:.3s;
+    }
+
+    nav a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-6px;
+      width:0;
+      height:1px;
+      background:var(--turq);
+      transition:.3s;
+    }
+
+    nav a:hover{
+      color:var(--white);
+    }
+
+    nav a:hover::after{
+      width:100%;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:15px 26px;
+      border-radius:999px;
+      background:var(--turq);
+      color:#001111;
+      font-weight:800;
+      border:1px solid var(--turq);
+      box-shadow:0 0 35px rgba(53,243,230,.25);
+      transition:.35s;
+    }
+
+    .btn:hover{
+      transform:translateY(-4px) scale(1.02);
+      box-shadow:0 0 55px rgba(53,243,230,.45);
+    }
+
+    .btn.secondary{
+      background:transparent;
+      color:var(--white);
+      border:1px solid rgba(255,255,255,.22);
+      box-shadow:none;
+    }
+
+    .btn.secondary:hover{
+      border-color:var(--turq);
+      color:var(--turq);
+    }
+
+    .hero{
+      min-height:100vh;
+      padding:150px 7% 90px;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:70px;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:650px;
+      height:650px;
+      right:-180px;
+      top:100px;
+      background:radial-gradient(circle, rgba(53,243,230,.22), transparent 62%);
+      filter:blur(10px);
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding:9px 14px;
+      border:1px solid rgba(53,243,230,.25);
+      border-radius:999px;
+      color:var(--turq);
+      font-size:13px;
+      margin-bottom:24px;
+      background:rgba(53,243,230,.05);
+    }
+
+    h1{
+      font-size:clamp(48px, 7vw, 95px);
+      line-height:.95;
+      letter-spacing:-4px;
+      margin-bottom:26px;
+    }
+
+    h1 span{
+      color:var(--turq);
+      text-shadow:0 0 40px rgba(53,243,230,.35);
+    }
+
+    .hero p{
+      color:#cfcfcf;
+      font-size:20px;
+      line-height:1.7;
+      max-width:680px;
+      margin-bottom:36px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-bottom:40px;
+    }
+
+    .mini-trust{
+      display:flex;
+      gap:28px;
+      flex-wrap:wrap;
+      color:#bdbdbd;
+      font-size:14px;
+    }
+
+    .mini-trust strong{
+      color:var(--white);
+    }
+
+    .hero-visual{
+      position:relative;
+    }
+
+    .photo-card{
+      position:relative;
+      overflow:hidden;
+      border-radius:34px;
+      min-height:620px;
       background:
-        linear-gradient(rgba(248,243,239,.65), rgba(248,243,239,.95)),
-        url("https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1600&q=80");
-      background-size: cover;
-      background-position: center;
-    }
-    .hero-content { max-width: 720px; }
-    .tag {
-      color: #8b5e4b;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 13px;
-      font-weight: 700;
-    }
-    h1 {
-      font-family: Georgia, serif;
-      font-size: clamp(44px, 7vw, 82px);
-      line-height: 1.05;
-      margin: 18px 0;
-    }
-    h2 {
-      font-family: Georgia, serif;
-      font-size: clamp(34px, 5vw, 56px);
-      margin: 12px 0 35px;
-    }
-    .hero p {
-      font-size: 20px;
-      max-width: 620px;
-      margin-bottom: 32px;
-    }
-    .hero-buttons {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
+        linear-gradient(to bottom, rgba(0,0,0,.05), rgba(0,0,0,.9)),
+        url("https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=90");
+      background-size:cover;
+      background-position:center;
+      border:1px solid rgba(255,255,255,.15);
+      box-shadow:0 40px 120px rgba(0,0,0,.65);
+      transform:rotate(1.5deg);
+      transition:.5s;
     }
 
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      padding: 50px 7%;
-      background: #2b2420;
-      color: white;
-    }
-    .stats div { text-align: center; }
-    .stats h3 {
-      font-size: 38px;
-      color: #e8c7b0;
+    .photo-card:hover{
+      transform:rotate(0deg) translateY(-8px);
     }
 
-    .section { padding: 95px 7%; }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 26px;
-    }
-    .card {
-      background: white;
-      padding: 34px;
-      border-radius: 28px;
-      box-shadow: 0 18px 45px rgba(43,36,32,.08);
-      border: 1px solid #eee1d9;
-    }
-    .card.featured {
-      background: #8b5e4b;
-      color: white;
-    }
-    .card h3 {
-      font-size: 24px;
-      margin-bottom: 8px;
-    }
-    .meta {
-      color: #b9886e;
-      font-weight: 700;
-      margin-bottom: 15px;
-    }
-    .featured .meta { color: #f4d5c3; }
-
-    .service-grid {
-      margin-top: 45px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-    .service-grid div {
-      background: #efe3dc;
-      padding: 22px;
-      border-radius: 20px;
-      font-weight: 700;
-      color: #5c3a2d;
+    .floating-box{
+      position:absolute;
+      left:-35px;
+      bottom:45px;
+      width:260px;
+      padding:22px;
+      border-radius:24px;
+      background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.18);
+      backdrop-filter:blur(18px);
+      box-shadow:0 25px 70px rgba(0,0,0,.35);
     }
 
-    .reviews { background: #fffaf7; }
-
-    .about {
-      background: #2b2420;
-      color: white;
-    }
-    .about p {
-      max-width: 780px;
-      font-size: 19px;
+    .floating-box b{
+      color:var(--turq);
+      font-size:26px;
     }
 
-    .contact {
-      text-align: center;
-      padding: 90px 7%;
-      background: #efe3dc;
-    }
-    .contact p { margin-bottom: 8px; }
-    .schedule { margin: 25px 0; }
-
-    footer {
-      text-align: center;
-      padding: 28px;
-      background: #2b2420;
-      color: white;
-      font-size: 14px;
+    .section{
+      padding:110px 7%;
+      position:relative;
     }
 
-    @media (max-width: 900px) {
-      nav { display: none; }
-      .stats, .cards, .service-grid {
-        grid-template-columns: 1fr;
-      }
-      .hero {
-        min-height: auto;
-        padding: 90px 7%;
-      }
+    .section-title{
+      max-width:780px;
+      margin-bottom:50px;
+    }
+
+    .tag{
+      color:var(--turq);
+      text-transform:uppercase;
+      font-size:13px;
+      letter-spacing:2px;
+      font-weight:900;
+      margin-bottom:14px;
+      display:block;
+    }
+
+    h2{
+      font-size:clamp(36px, 5vw, 70px);
+      line-height:1;
+      letter-spacing:-2px;
+      margin-bottom:20px;
+    }
+
+    .section-title p{
+      color:#bdbdbd;
+      font-size:18px;
+      line-height:1.7;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+      padding:0 7% 90px;
+    }
+
+    .stat{
+      padding:34px;
+      border-radius:30px;
+      background:linear-gradient(145deg, rgba(255,255,255,.1), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.12);
+      transition:.35s;
+    }
+
+    .stat:hover{
+      transform:translateY(-8px);
+      border-color:rgba(53,243,230,.6);
+      box-shadow:0 0 50px rgba(53,243,230,.08);
+    }
+
+    .stat h3{
+      font-size:44px;
+      color:var(--turq);
+      margin-bottom:8px;
+    }
+
+    .stat p{
+      color:#bdbdbd;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+    }
+
+    .card{
+      padding:34px;
+      border-radius:32px;
+      background:#101010;
+      border:1px solid rgba(255,255,255,.12);
+      transition:.35s;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:auto -30% -60% -30%;
+      height:180px;
+      background:radial-gradient(circle, rgba(53,243,230,.22), transparent 65%);
+      opacity:0;
+      transition:.35s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      border-color:rgba(53,243,230,.55);
+      box-shadow:0 30px 80px rgba(0,0,0,.35);
+    }
+
+    .card:hover::before{
+      opacity:1;
+    }
+
+    .card.featured{
+      background:linear-gradient(145deg, #101010, #003436);
+      border-color:rgba(53,243,230,.5);
+    }
+
+    .card h3{
+      font-size:25px;
+      margin-bottom:12px;
+      position:relative;
+      z-index:1;
+    }
+
+    .price{
+      color:var(--turq);
+      font-size:22px;
+      font-weight:900;
+      margin-bottom:16px;
+      position:relative;
+      z-index:1;
+    }
+
+    .card p{
+      color:#c9c9c9;
+      line-height:1.7;
+      position:relative;
+      z-index:1;
+    }
+
+    .image-strip{
+      margin-top:34px;
+      display:grid;
+      grid-template-columns:1.3fr .7fr 1fr;
+      gap:20px;
+    }
+
+    .image-box{
+      min-height:300px;
+      border-radius:32px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      background-size:cover;
+      background-position:center;
+      transition:.45s;
+    }
+
+    .image-box:hover{
+      transform:scale(.98);
+      filter:brightness(1.1);
+    }
+
+    .img1{background-image:url("https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=900&q=85")}
+    .img2{background-image:url("https://images.unsplash.com/photo-1596178060810-72f53ce9a65c?auto=format&fit=crop&w=900&q=85")}
+    .img3{background-image:url("https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=900&q=85")}
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+      margin-top:35px;
+    }
+
+    .service-pill{
+      padding:22px;
+      border-radius:24px;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.1);
+      color:#eaeaea;
+      transition:.3s;
+    }
+
+    .service-pill:hover{
+      background:rgba(53,243,230,.08);
+      border-color:rgba(53,243,230,.45);
+      transform:translateY(-6px);
+      color:var(--turq);
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .big-photo{
+      min-height:620px;
+      border-radius:38px;
+      background:
+        linear-gradient(to bottom, transparent, rgba(0,0,0,.75)),
+        url("https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=1000&q=90");
+      background-size:cover;
+      background-position:center;
+      border:1px solid rgba(255,255,255,.15);
+    }
+
+    .review{
+      margin-bottom:18px;
+      padding:26px;
+      border-radius:26px;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.1);
+      transition:.3s;
+    }
+
+    .review:hover{
+      transform:translateX(8px);
+      border-color:rgba(53,243,230,.4);
+    }
+
+    .review p{
+      color:#d6d6d6;
+      line-height:1.7;
+      margin-bottom:12px;
+    }
+
+    .review strong{
+      color:var(--turq);
+    }
+
+    .contact{
+      margin:0 7% 80px;
+      padding:70px;
+      border-radius:42px;
+      background:
+        linear-gradient(135deg, rgba(53,243,230,.14), rgba(255,255,255,.04)),
+        #101010;
+      border:1px solid rgba(53,243,230,.25);
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .contact::before{
+      content:"";
+      position:absolute;
+      width:500px;
+      height:500px;
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%);
+      background:radial-gradient(circle, rgba(53,243,230,.18), transparent 65%);
+      pointer-events:none;
+    }
+
+    .contact *{
+      position:relative;
+      z-index:1;
+    }
+
+    .contact h2{
+      margin-bottom:18px;
+    }
+
+    .contact p{
+      color:#cfcfcf;
+      margin-bottom:8px;
+    }
+
+    .schedule{
+      margin:26px 0 34px;
+      color:#fff;
+    }
+
+    .floating-cta{
+      position:fixed;
+      right:24px;
+      bottom:24px;
+      z-index:80;
+      animation:pulse 2.3s infinite;
+    }
+
+    @keyframes pulse{
+      0%{box-shadow:0 0 0 0 rgba(53,243,230,.45)}
+      70%{box-shadow:0 0 0 18px rgba(53,243,230,0)}
+      100%{box-shadow:0 0 0 0 rgba(53,243,230,0)}
+    }
+
+    footer{
+      padding:34px 7%;
+      color:#777;
+      border-top:1px solid rgba(255,255,255,.1);
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(40px);
+      transition:1s ease;
+    }
+
+    .reveal.active{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    @media(max-width:1000px){
+      nav{display:none}
+      .hero,.split{grid-template-columns:1fr}
+      .stats,.cards,.services-grid{grid-template-columns:1fr 1fr}
+      .image-strip{grid-template-columns:1fr}
+      .photo-card,.big-photo{min-height:460px}
+      h1{letter-spacing:-2px}
+    }
+
+    @media(max-width:650px){
+      .navbar{padding:18px 5%}
+      .hero,.section{padding-left:5%;padding-right:5%}
+      .stats{grid-template-columns:1fr;padding-left:5%;padding-right:5%}
+      .cards,.services-grid{grid-template-columns:1fr}
+      .contact{margin:0 5% 60px;padding:42px 24px}
+      .floating-box{left:16px;width:220px}
+      .btn{width:100%}
+      .hero-actions{width:100%}
+      footer{padding:28px 5%}
     }
   </style>
 </head>
 
 <body>
 
+<div class="noise"></div>
+
 <header class="navbar">
-  <div class="logo">Nayanna</div>
+  <div class="logo">Nayanna<span>.</span></div>
   <nav>
     <a href="#inicio">Inicio</a>
-    <a href="#servicios">Servicios</a>
+    <a href="#tratamientos">Tratamientos</a>
+    <a href="#resultados">Resultados</a>
     <a href="#resenas">Reseñas</a>
     <a href="#contacto">Contacto</a>
   </nav>
-  <a class="btn small" href="#contacto">Reservar</a>
+  <a class="btn" href="#contacto">Reservar</a>
 </header>
 
 <section id="inicio" class="hero">
-  <div class="hero-content">
-    <span class="tag">Centro médico estético en Rivas-Vaciamadrid</span>
-    <h1>Belleza, bienestar y medicina estética personalizada</h1>
+  <div class="hero-content reveal">
+    <div class="eyebrow">✨ Medicina estética en Rivas-Vaciamadrid</div>
+    <h1>Realza tu belleza con resultados <span>naturales</span>.</h1>
     <p>
-      Tratamientos faciales, corporales, depilación láser, aparatología avanzada
-      y medicina estética para realzar tu mejor versión.
+      Tratamientos faciales, corporales, depilación láser, aparatología avanzada y medicina estética
+      en un espacio premium, cercano y personalizado.
     </p>
-    <div class="hero-buttons">
-      <a href="#contacto" class="btn">Reservar cita</a>
-      <a href="#servicios" class="btn secondary">Ver tratamientos</a>
+
+    <div class="hero-actions">
+      <a href="#contacto" class="btn">Reservar cita ahora</a>
+      <a href="#tratamientos" class="btn secondary">Ver tratamientos</a>
+    </div>
+
+    <div class="mini-trust">
+      <div><strong>+8 años</strong> de experiencia</div>
+      <div><strong>+500</strong> pacientes satisfechos</div>
+      <div><strong>5 min</strong> Metro Rivas Futura</div>
+    </div>
+  </div>
+
+  <div class="hero-visual reveal">
+    <div class="photo-card"></div>
+    <div class="floating-box">
+      <b>Glow effect</b>
+      <p>Piel más luminosa, cuidada y fresca desde la primera visita.</p>
     </div>
   </div>
 </section>
 
-<section class="stats">
-  <div>
+<section class="stats reveal">
+  <div class="stat">
     <h3><span class="counter" data-target="8">0</span>+</h3>
     <p>Años de experiencia</p>
   </div>
-  <div>
+  <div class="stat">
     <h3><span class="counter" data-target="500">0</span>+</h3>
     <p>Pacientes satisfechos</p>
   </div>
-  <div>
+  <div class="stat">
     <h3><span class="counter" data-target="40">0</span>+</h3>
     <p>Tratamientos disponibles</p>
   </div>
-  <div>
+  <div class="stat">
     <h3>5 min</h3>
-    <p>Del Metro Rivas Futura</p>
+    <p>Desde Metro Rivas Futura</p>
   </div>
 </section>
 
-<section id="servicios" class="section">
-  <span class="tag">Nuestros tratamientos</span>
-  <h2>Servicios destacados</h2>
-
-  <div class="cards">
-    <article class="card featured">
-      <h3>Limpieza Ritual Sublime</h3>
-      <p class="meta">1 h 30 min · 55 €</p>
-      <p>
-        Purifica, oxigena y aporta frescura inmediata a la piel. Ideal para pieles
-        jóvenes que buscan prevenir imperfecciones y mantener un rostro luminoso.
-      </p>
-    </article>
-
-    <article class="card">
-      <h3>Limpieza Ritual con Punta de Diamante</h3>
-      <p class="meta">1 h 30 min · 79 €</p>
-      <p>
-        Microdermoabrasión para exfoliar en profundidad, mejorar textura y atenuar
-        manchas leves o marcas de acné.
-      </p>
-    </article>
-
-    <article class="card">
-      <h3>Limpieza Ritual Hidrafacial</h3>
-      <p class="meta">1 h 30 min · 79 €</p>
-      <p>
-        Higiene con espátula ultrasónica, cóctel vitamínico y mascarilla regeneradora.
-        Oxigena, descongestiona y revitaliza la piel.
-      </p>
-    </article>
-  </div>
-
-  <div class="service-grid">
-    <div>Faciales y limpieza facial</div>
-    <div>Medicina estética facial</div>
-    <div>Aparatología facial y corporal</div>
-    <div>Depilación láser diodo</div>
-    <div>Depilación con cera</div>
-    <div>Micropigmentación</div>
-    <div>Plasmapen y rejuvenecimiento</div>
-    <div>Tratamientos capilares y corporales</div>
-  </div>
-</section>
-
-<section id="resenas" class="section reviews">
-  <span class="tag">Opiniones reales</span>
-  <h2>Lo que dicen nuestras pacientes</h2>
-
-  <div class="cards">
-    <article class="card">
-      <p>“Salí encantada con la limpieza facial. La piel se quedó súper limpia, luminosa y suave desde el primer momento.”</p>
-      <strong>Laura</strong>
-    </article>
-    <article class="card">
-      <p>“Nayanna es muy atenta y profesional. El tratamiento facial fue muy completo, dejándome la cara muy limpia e hidratada.”</p>
-      <strong>Mika</strong>
-    </article>
-    <article class="card">
-      <p>“Me hice un tratamiento de radiofrecuencia y estoy asombrada con el resultado. Me veo radiante.”</p>
-      <strong>Pek</strong>
-    </article>
-  </div>
-</section>
-
-<section class="section about">
-  <div>
-    <span class="tag">Sobre el centro</span>
-    <h2>Nayanna Medicina Estética</h2>
+<section id="tratamientos" class="section">
+  <div class="section-title reveal">
+    <span class="tag">Servicios destacados</span>
+    <h2>Tratamientos pensados para verte mejor y sentirte mejor.</h2>
     <p>
-      Un espacio acogedor, profesional y cercano donde cada tratamiento se adapta
-      a las necesidades de cada paciente para conseguir resultados naturales,
-      visibles y seguros.
+      Selección de los servicios principales para captar reservas rápidamente. El listado completo puede añadirse debajo
+      o enlazarse a una página de reservas.
     </p>
   </div>
+
+  <div class="cards">
+    <article class="card featured reveal">
+      <h3>Limpieza Ritual Sublime</h3>
+      <div class="price">55 € · 1 h 30 min</div>
+      <p>Purifica, oxigena y aporta frescura inmediata. Ideal para pieles jóvenes que buscan prevenir imperfecciones y mantener un rostro luminoso.</p>
+    </article>
+
+    <article class="card reveal">
+      <h3>Punta de Diamante</h3>
+      <div class="price">79 € · 1 h 30 min</div>
+      <p>Microdermoabrasión para exfoliar en profundidad, mejorar textura y atenuar manchas leves o marquitas de acné.</p>
+    </article>
+
+    <article class="card reveal">
+      <h3>Ritual Hidrafacial</h3>
+      <div class="price">79 € · 1 h 30 min</div>
+      <p>Espátula ultrasónica, cóctel vitamínico y mascarilla regeneradora para oxigenar, descongestionar y revitalizar.</p>
+    </article>
+  </div>
+
+  <div class="image-strip reveal">
+    <div class="image-box img1"></div>
+    <div class="image-box img2"></div>
+    <div class="image-box img3"></div>
+  </div>
+
+  <div class="services-grid reveal">
+    <div class="service-pill">Faciales y limpieza facial</div>
+    <div class="service-pill">Medicina estética facial</div>
+    <div class="service-pill">Depilación láser diodo</div>
+    <div class="service-pill">Aparatología corporal</div>
+    <div class="service-pill">Micropigmentación</div>
+    <div class="service-pill">Plasmapen facial</div>
+    <div class="service-pill">Tratamientos capilares</div>
+    <div class="service-pill">Wellness y exfoliación</div>
+  </div>
 </section>
 
-<section id="contacto" class="contact">
-  <h2>Reserva tu cita</h2>
-  <p>Av. Aurelio Álvarez, 4, 28521 Rivas-Vaciamadrid, Madrid</p>
-  <p>A 5 minutos andando de Metro Rivas Futura</p>
+<section id="resultados" class="section">
+  <div class="split">
+    <div class="big-photo reveal"></div>
+
+    <div class="reveal">
+      <span class="tag">Experiencia premium</span>
+      <h2>Un centro pensado para cuidar cada detalle.</h2>
+      <p style="color:#cfcfcf;line-height:1.8;font-size:18px;margin-bottom:24px;">
+        En Nayanna Medicina Estética cada tratamiento se adapta a tu piel, tus objetivos y tu momento.
+        El enfoque combina diagnóstico, aparatología avanzada, técnica profesional y un trato cercano.
+      </p>
+
+      <div class="cards" style="grid-template-columns:1fr;gap:16px;">
+        <div class="card">
+          <h3>Diagnóstico personalizado</h3>
+          <p>Analizamos tu piel y recomendamos el tratamiento más adecuado para conseguir resultados visibles y naturales.</p>
+        </div>
+        <div class="card">
+          <h3>Tecnología avanzada</h3>
+          <p>Radiofrecuencia, láser, Dermapen, Zionic, Vmat-Pro, presoterapia y tratamientos combinados.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="resenas" class="section">
+  <div class="section-title reveal">
+    <span class="tag">Reseñas verificadas</span>
+    <h2>Pacientes que salen con la piel y la confianza renovadas.</h2>
+  </div>
+
+  <div class="split">
+    <div class="reveal">
+      <div class="review">
+        <p>“Salí encantada con la limpieza facial. La piel se quedó súper limpia, luminosa y suave desde el primer momento.”</p>
+        <strong>Laura</strong>
+      </div>
+
+      <div class="review">
+        <p>“Nayanna es muy atenta y profesional. El tratamiento facial fue muy completo, dejándome la cara muy limpia e hidratada.”</p>
+        <strong>Mika</strong>
+      </div>
+
+      <div class="review">
+        <p>“Me hice radiofrecuencia y estoy asombrada con el resultado. Me veo radiante.”</p>
+        <strong>Pek</strong>
+      </div>
+    </div>
+
+    <div class="card reveal">
+      <span class="tag">Ubicación</span>
+      <h3>Rivas-Vaciamadrid</h3>
+      <p>
+        Av. Aurelio Álvarez, 4, 28521 Rivas-Vaciamadrid, Madrid.
+        A solo 5 minutos andando de la estación de metro Rivas Futura.
+      </p>
+      <br>
+      <p><strong>Lunes a viernes:</strong> 10:00 – 20:00</p>
+      <p><strong>Sábado:</strong> 10:00 – 14:00</p>
+      <p><strong>Domingo:</strong> Cerrado</p>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="contact reveal">
+  <span class="tag">Reserva tu cita</span>
+  <h2>Empieza hoy tu cambio.</h2>
+  <p>Tratamientos personalizados en Nayanna Medicina Estética.</p>
+  <p>Av. Aurelio Álvarez, 4 · Rivas-Vaciamadrid</p>
 
   <div class="schedule">
     <p><strong>Lunes a viernes:</strong> 10:00 – 20:00</p>
     <p><strong>Sábado:</strong> 10:00 – 14:00</p>
-    <p><strong>Domingo:</strong> Cerrado</p>
   </div>
 
-  <a class="btn" href="https://wa.me/34XXXXXXXXX" target="_blank">
-    Reservar por WhatsApp
-  </a>
+  <a class="btn" href="https://wa.me/34XXXXXXXXX" target="_blank">Reservar por WhatsApp</a>
 </section>
 
+<a class="btn floating-cta" href="https://wa.me/34XXXXXXXXX" target="_blank">Reservar</a>
+
 <footer>
-  <p>© 2026 Nayanna Medicina Estética · Rivas-Vaciamadrid</p>
+  <p>© 2026 Nayanna Medicina Estética</p>
+  <p>Rivas-Vaciamadrid · Madrid</p>
 </footer>
 
 <script>
+  const reveals = document.querySelectorAll(".reveal");
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("active");
+      }
+    });
+  }, { threshold: 0.12 });
+
+  reveals.forEach(el => revealObserver.observe(el));
+
   const counters = document.querySelectorAll(".counter");
 
   const animateCounter = (counter) => {
     const target = Number(counter.dataset.target);
     let current = 0;
-    const increment = target / 80;
+    const increment = target / 90;
 
     const update = () => {
       current += increment;
-      if (current < target) {
+      if(current < target){
         counter.textContent = Math.ceil(current);
         requestAnimationFrame(update);
       } else {
@@ -350,16 +793,25 @@
     update();
   };
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
         animateCounter(entry.target);
-        observer.unobserve(entry.target);
+        counterObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.6 });
+  }, { threshold: .7 });
 
-  counters.forEach((counter) => observer.observe(counter));
+  counters.forEach(counter => counterObserver.observe(counter));
+
+  window.addEventListener("scroll", () => {
+    const navbar = document.querySelector(".navbar");
+    if(window.scrollY > 80){
+      navbar.style.background = "rgba(5,5,5,.88)";
+    } else {
+      navbar.style.background = "rgba(5,5,5,.55)";
+    }
+  });
 </script>
 
 </body>

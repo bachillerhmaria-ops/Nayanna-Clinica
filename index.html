@@ -3,48 +3,31 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
 <title>Nayanna Medicina Estética | Rivas-Vaciamadrid</title>
 
 <style>
 :root{
   --bg:#f7f3ee;
-  --white:#ffffff;
-  --black:#090909;
+  --white:#fff;
+  --black:#080808;
   --text:#171717;
   --muted:#666;
   --line:rgba(0,0,0,.09);
   --turq:#18d6cf;
   --turq2:#00aaa8;
-  --shadow:0 24px 70px rgba(0,0,0,.08);
+  --shadow:0 22px 70px rgba(0,0,0,.08);
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
   font-family:Inter,Arial,sans-serif;
   background:var(--bg);
   color:var(--text);
   overflow-x:hidden;
 }
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-img{
-  max-width:100%;
-  display:block;
-}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
 
 .nav{
   position:fixed;
@@ -52,20 +35,19 @@ img{
   left:0;
   width:100%;
   z-index:999;
-  padding:18px 7%;
+  padding:14px 7%;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  background:rgba(247,243,238,.82);
+  background:rgba(247,243,238,.9);
   backdrop-filter:blur(20px);
   border-bottom:1px solid var(--line);
-  transition:.35s;
+  transition:.3s;
 }
 
 .logo img{
   height:48px;
   width:auto;
-  display:block;
   transition:.35s;
 }
 
@@ -76,25 +58,25 @@ img{
 
 .nav nav{
   display:flex;
-  gap:30px;
+  gap:28px;
 }
 
 .nav nav a{
   font-size:14px;
-  font-weight:850;
-  transition:.3s;
+  font-weight:900;
   position:relative;
+  transition:.3s;
 }
 
 .nav nav a::after{
   content:"";
   position:absolute;
   left:0;
-  bottom:-8px;
+  bottom:-7px;
   width:0;
   height:2px;
   background:var(--turq);
-  transition:.35s;
+  transition:.3s;
 }
 
 .nav nav a:hover{
@@ -109,21 +91,21 @@ img{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:15px 26px;
+  padding:14px 25px;
   border-radius:999px;
   background:var(--black);
   color:white;
   border:1px solid var(--black);
-  font-weight:900;
-  transition:.35s;
+  font-weight:950;
   cursor:pointer;
+  transition:.35s;
   box-shadow:0 14px 38px rgba(0,0,0,.14);
 }
 
 .btn:hover{
   background:var(--turq);
-  color:#001;
   border-color:var(--turq);
+  color:#001;
   transform:translateY(-5px) scale(1.03);
   box-shadow:0 20px 60px rgba(24,214,207,.35);
 }
@@ -140,12 +122,16 @@ img{
   border-color:var(--turq);
 }
 
+.mobile-bottom{
+  display:none;
+}
+
 .hero{
-  min-height:100vh;
-  padding:150px 7% 90px;
+  min-height:92vh;
+  padding:125px 7% 55px;
   display:grid;
   grid-template-columns:1.05fr .95fr;
-  gap:70px;
+  gap:64px;
   align-items:center;
   position:relative;
 }
@@ -153,11 +139,11 @@ img{
 .hero::before{
   content:"";
   position:absolute;
-  width:650px;
-  height:650px;
+  width:620px;
+  height:620px;
   right:-250px;
   top:120px;
-  background:radial-gradient(circle, rgba(24,214,207,.24), transparent 62%);
+  background:radial-gradient(circle,rgba(24,214,207,.24),transparent 62%);
   pointer-events:none;
 }
 
@@ -170,15 +156,15 @@ img{
   color:var(--turq2);
   font-size:13px;
   font-weight:950;
-  margin-bottom:24px;
+  margin-bottom:22px;
   box-shadow:0 12px 28px rgba(0,0,0,.04);
 }
 
 h1{
-  font-size:clamp(48px,7vw,96px);
+  font-size:clamp(46px,7vw,92px);
   line-height:.93;
   letter-spacing:-4px;
-  margin-bottom:26px;
+  margin-bottom:24px;
 }
 
 .serif{
@@ -190,38 +176,36 @@ h1{
 
 .hero p{
   font-size:20px;
-  line-height:1.75;
+  line-height:1.7;
   color:#4f4f4f;
   max-width:680px;
-  margin-bottom:34px;
+  margin-bottom:30px;
 }
 
 .hero-actions{
   display:flex;
-  gap:16px;
+  gap:14px;
   flex-wrap:wrap;
-  margin-bottom:30px;
+  margin-bottom:28px;
 }
 
 .trust{
   display:flex;
-  gap:22px;
+  gap:18px;
   flex-wrap:wrap;
   color:#555;
   font-size:14px;
   font-weight:850;
 }
 
-.trust strong{
-  color:#000;
-}
+.trust strong{color:#000}
 
 .hero-photo{
-  min-height:650px;
-  border-radius:42px;
+  min-height:610px;
+  border-radius:40px;
   border:10px solid white;
   background:
-    linear-gradient(to bottom, rgba(255,255,255,.05), rgba(0,0,0,.28)),
+    linear-gradient(to bottom,rgba(255,255,255,.06),rgba(0,0,0,.30)),
     url("https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=90");
   background-size:cover;
   background-position:center;
@@ -235,135 +219,13 @@ h1{
   box-shadow:0 36px 95px rgba(24,214,207,.24);
 }
 
-/* BRAND LOGO SECTION */
-
-.brand-section{
-  padding:0 7% 90px;
-}
-
-.brand-box{
-  background:white;
-  border-radius:42px;
-  padding:60px;
-  display:grid;
-  grid-template-columns:.8fr 1.2fr;
-  gap:60px;
-  align-items:center;
-  border:1px solid rgba(0,0,0,.08);
-  box-shadow:0 24px 70px rgba(0,0,0,.07);
-  position:relative;
-  overflow:hidden;
-}
-
-.brand-box::before{
-  content:"";
-  position:absolute;
-  width:520px;
-  height:520px;
-  right:-220px;
-  top:-120px;
-  background:radial-gradient(circle, rgba(24,214,207,.18), transparent 65%);
-}
-
-.brand-logo{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  position:relative;
-  z-index:2;
-}
-
-.brand-logo img{
-  width:100%;
-  max-width:380px;
-  transition:.45s cubic-bezier(.2,.8,.2,1);
-  filter:drop-shadow(0 20px 40px rgba(0,0,0,.08));
-}
-
-.brand-logo img:hover{
-  transform:scale(1.035) rotate(-1deg);
-  filter:
-    drop-shadow(0 20px 50px rgba(24,214,207,.18))
-    drop-shadow(0 10px 30px rgba(0,0,0,.08));
-}
-
-.brand-content{
-  position:relative;
-  z-index:2;
-}
-
-.brand-content h2{
-  margin-bottom:22px;
-}
-
-.brand-content p{
-  font-size:18px;
-  line-height:1.8;
-  color:#555;
-  margin-bottom:30px;
-}
-
-.metro{
-  margin:0 7% 40px;
-  background:#0a0a0a;
-  color:white;
-  padding:24px 32px;
-  border-radius:28px;
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  align-items:center;
-  box-shadow:var(--shadow);
-  transition:.35s;
-}
-
-.metro:hover{
-  transform:translateY(-7px);
-}
-
-.metro span{
-  color:var(--turq);
-  font-weight:950;
-}
-
-.stats{
-  padding:20px 7% 80px;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-.stat{
-  background:white;
-  padding:34px;
-  border-radius:30px;
-  border:1px solid var(--line);
-  box-shadow:0 16px 44px rgba(0,0,0,.05);
-  transition:.35s;
-}
-
-.stat:hover{
-  transform:translateY(-10px);
-  border-color:rgba(24,214,207,.45);
-}
-
-.stat h3{
-  font-size:48px;
-  color:var(--turq2);
-}
-
-.stat p{
-  color:#555;
-  font-weight:850;
-}
-
 .section{
-  padding:105px 7%;
+  padding:82px 7%;
 }
 
 .section-title{
-  max-width:850px;
-  margin-bottom:50px;
+  max-width:860px;
+  margin-bottom:38px;
 }
 
 .tag{
@@ -377,7 +239,7 @@ h1{
 }
 
 h2{
-  font-size:clamp(38px,5vw,72px);
+  font-size:clamp(36px,5vw,68px);
   line-height:1;
   letter-spacing:-2px;
   margin-bottom:18px;
@@ -386,131 +248,209 @@ h2{
 .section-title p{
   color:#555;
   font-size:18px;
-  line-height:1.75;
+  line-height:1.7;
 }
 
-.cards{
+.quick-info{
+  margin:0 7% 30px;
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:24px;
+  gap:16px;
 }
 
-.card{
+.info-card{
   background:white;
-  padding:32px;
-  border-radius:34px;
+  padding:24px;
+  border-radius:26px;
   border:1px solid var(--line);
-  box-shadow:0 18px 50px rgba(0,0,0,.06);
-  transition:.45s cubic-bezier(.2,.8,.2,1);
+  box-shadow:0 14px 40px rgba(0,0,0,.05);
+  transition:.35s;
+}
+
+.info-card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(24,214,207,.45);
+}
+
+.info-card strong{
+  display:block;
+  font-size:24px;
+  color:var(--turq2);
+  margin-bottom:6px;
+}
+
+.featured{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.feature-card{
+  background:white;
+  padding:28px;
+  border-radius:30px;
+  border:1px solid var(--line);
+  box-shadow:0 16px 45px rgba(0,0,0,.06);
+  transition:.42s cubic-bezier(.2,.8,.2,1);
   position:relative;
   overflow:hidden;
 }
 
-.card::before{
+.feature-card::before{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(135deg, rgba(24,214,207,.16), transparent 55%);
+  background:linear-gradient(135deg,rgba(24,214,207,.18),transparent 56%);
   opacity:0;
   transition:.35s;
 }
 
-.card:hover{
-  transform:translateY(-14px) scale(1.015);
+.feature-card:hover{
+  transform:translateY(-12px) scale(1.015);
   border-color:rgba(24,214,207,.5);
-  box-shadow:0 34px 90px rgba(0,0,0,.12);
+  box-shadow:0 30px 80px rgba(0,0,0,.12);
 }
 
-.card:hover::before{
-  opacity:1;
-}
+.feature-card:hover::before{opacity:1}
 
-.card.dark{
-  background:#090909;
+.feature-card.dark{
+  background:#080808;
   color:white;
 }
 
-.card h3,
-.card p,
-.price,
-.duration{
+.feature-card h3,
+.feature-card p,
+.feature-card .price,
+.feature-card .duration{
   position:relative;
   z-index:1;
 }
 
-.card h3{
-  font-size:25px;
-  margin-bottom:12px;
+.feature-card h3{
+  font-size:22px;
+  margin-bottom:10px;
 }
 
 .duration{
   color:#777;
   font-weight:850;
-  margin-bottom:10px;
+  font-size:14px;
+  margin-bottom:8px;
 }
 
-.card.dark .duration{
-  color:#d0d0d0;
-}
+.feature-card.dark .duration{color:#d6d6d6}
 
 .price{
   color:var(--turq2);
-  font-size:25px;
+  font-size:23px;
   font-weight:950;
-  margin-bottom:18px;
+  margin-bottom:14px;
 }
 
-.card.dark .price{
-  color:var(--turq);
-}
+.feature-card.dark .price{color:var(--turq)}
 
-.card p{
+.feature-card p{
   color:#555;
-  line-height:1.7;
+  line-height:1.65;
+  font-size:15px;
 }
 
-.card.dark p{
-  color:#ddd;
+.feature-card.dark p{color:#ddd}
+
+.services-panel{
+  background:white;
+  border-radius:42px;
+  padding:34px;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+}
+
+.category-nav{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:26px;
+  position:sticky;
+  top:82px;
+  z-index:20;
+  background:white;
+  padding:0 0 18px;
+}
+
+.category-nav a{
+  padding:11px 16px;
+  border-radius:999px;
+  background:#f4f4f4;
+  font-size:13px;
+  font-weight:900;
+  border:1px solid rgba(0,0,0,.07);
+  transition:.3s;
+}
+
+.category-nav a:hover{
+  background:var(--black);
+  color:white;
+  transform:translateY(-3px);
+}
+
+.service-group{
+  margin-bottom:28px;
+  scroll-margin-top:150px;
+}
+
+.group-title{
+  font-size:25px;
+  margin-bottom:14px;
+  letter-spacing:-.5px;
 }
 
 .accordion{
   display:grid;
-  gap:14px;
+  gap:10px;
 }
 
 .item{
-  background:white;
-  border-radius:24px;
+  background:#fbfbfb;
+  border-radius:20px;
   overflow:hidden;
-  border:1px solid var(--line);
-  box-shadow:0 14px 38px rgba(0,0,0,.05);
-  transition:.35s;
+  border:1px solid rgba(0,0,0,.08);
+  transition:.3s;
 }
 
 .item:hover{
-  transform:translateY(-6px);
+  transform:translateY(-4px);
   border-color:rgba(24,214,207,.5);
-  box-shadow:0 22px 65px rgba(24,214,207,.16);
+  box-shadow:0 18px 45px rgba(24,214,207,.13);
 }
 
 .item button{
   width:100%;
   border:0;
-  background:white;
-  padding:23px 26px;
+  background:transparent;
+  padding:18px 20px;
   display:flex;
   justify-content:space-between;
+  gap:16px;
   align-items:center;
   text-align:left;
-  font-size:18px;
+  font-size:16px;
   font-weight:950;
   cursor:pointer;
 }
 
+.item button small{
+  display:block;
+  color:#777;
+  font-size:13px;
+  margin-top:4px;
+  font-weight:800;
+}
+
 .item button span{
   color:var(--turq2);
-  font-size:28px;
+  font-size:26px;
   transition:.3s;
+  flex:none;
 }
 
 .item.active button span{
@@ -520,50 +460,54 @@ h2{
 .content{
   max-height:0;
   overflow:hidden;
-  transition:max-height .45s ease;
+  transition:max-height .38s ease;
 }
 
 .inner{
-  padding:0 26px 26px;
+  padding:0 20px 20px;
   color:#555;
-  line-height:1.75;
+  line-height:1.65;
 }
 
-.inner .price{
-  margin-top:14px;
+.inner-price{
+  margin-top:12px;
+  display:inline-block;
+  color:var(--turq2);
+  font-weight:950;
+  font-size:18px;
 }
 
 .reviews{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:22px;
+  gap:20px;
 }
 
 .review{
   background:white;
-  padding:30px;
-  border-radius:32px;
+  padding:28px;
+  border-radius:30px;
   border:1px solid var(--line);
-  box-shadow:0 18px 50px rgba(0,0,0,.06);
-  transition:.4s;
+  box-shadow:0 16px 45px rgba(0,0,0,.06);
+  transition:.35s;
 }
 
 .review:hover{
-  transform:translateY(-12px) rotate(-.5deg);
+  transform:translateY(-10px) rotate(-.4deg);
   border-color:rgba(24,214,207,.45);
 }
 
 .stars{
   color:#ffb800;
   letter-spacing:2px;
-  font-size:18px;
-  margin-bottom:14px;
+  font-size:17px;
+  margin-bottom:13px;
 }
 
 .review p{
   color:#444;
-  line-height:1.7;
-  margin-bottom:20px;
+  line-height:1.65;
+  margin-bottom:18px;
 }
 
 .review-footer{
@@ -576,10 +520,10 @@ h2{
 }
 
 .contact{
-  margin:0 7% 80px;
-  padding:75px;
+  margin:0 7% 82px;
+  padding:62px;
   background:white;
-  border-radius:46px;
+  border-radius:42px;
   box-shadow:var(--shadow);
   border:1px solid var(--line);
   position:relative;
@@ -594,7 +538,7 @@ h2{
   left:50%;
   top:50%;
   transform:translate(-50%,-50%);
-  background:radial-gradient(circle, rgba(24,214,207,.18), transparent 65%);
+  background:radial-gradient(circle,rgba(24,214,207,.18),transparent 65%);
 }
 
 .contact *{
@@ -603,18 +547,18 @@ h2{
 }
 
 .form{
-  margin-top:35px;
+  margin-top:30px;
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:16px;
+  gap:14px;
 }
 
 .form input,
 .form select,
 .form textarea{
   width:100%;
-  padding:17px 18px;
-  border-radius:18px;
+  padding:16px 17px;
+  border-radius:17px;
   border:1px solid rgba(0,0,0,.13);
   background:#f8f8f8;
   font-size:15px;
@@ -632,7 +576,7 @@ h2{
 
 .form textarea{
   grid-column:1/-1;
-  min-height:145px;
+  min-height:130px;
   resize:vertical;
 }
 
@@ -641,7 +585,7 @@ h2{
 }
 
 footer{
-  padding:34px 7%;
+  padding:30px 7% 95px;
   display:flex;
   justify-content:space-between;
   gap:20px;
@@ -650,23 +594,9 @@ footer{
   border-top:1px solid var(--line);
 }
 
-.floating{
-  position:fixed;
-  right:24px;
-  bottom:24px;
-  z-index:999;
-  animation:pulse 2.4s infinite;
-}
-
-@keyframes pulse{
-  0%{box-shadow:0 0 0 0 rgba(24,214,207,.42)}
-  70%{box-shadow:0 0 0 18px rgba(24,214,207,0)}
-  100%{box-shadow:0 0 0 0 rgba(24,214,207,0)}
-}
-
 .reveal{
   opacity:0;
-  transform:translateY(38px);
+  transform:translateY(34px);
   transition:1s ease;
 }
 
@@ -675,75 +605,206 @@ footer{
   transform:translateY(0);
 }
 
-@media(max-width:1050px){
+@media(max-width:1100px){
+  .featured{grid-template-columns:repeat(2,1fr)}
+  .hero{grid-template-columns:1fr}
+  .reviews{grid-template-columns:1fr 1fr}
+}
+
+@media(max-width:820px){
+  body{
+    padding-bottom:78px;
+  }
+
+  .nav{
+    padding:10px 5%;
+  }
+
+  .logo img{
+    height:42px;
+  }
 
   .nav nav{
     display:none;
   }
 
-  .hero{
-    grid-template-columns:1fr;
+  .nav .btn{
+    display:none;
   }
 
-  .brand-box{
-    grid-template-columns:1fr;
+  .mobile-bottom{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:6px;
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(18px);
+    border-top:1px solid rgba(0,0,0,.1);
+    padding:9px 8px 11px;
+  }
+
+  .mobile-bottom a{
     text-align:center;
+    font-size:11px;
+    font-weight:950;
+    padding:9px 5px;
+    border-radius:16px;
+    background:#f4f4f4;
   }
 
-  .brand-logo img{
-    max-width:280px;
-    margin:auto;
+  .mobile-bottom a.cta{
+    background:var(--black);
+    color:white;
   }
 
-  .stats,
-  .cards,
-  .reviews{
-    grid-template-columns:1fr 1fr;
-  }
-}
-
-@media(max-width:680px){
-
-  .hero,
-  .section{
-    padding-left:5%;
-    padding-right:5%;
+  .hero{
+    min-height:auto;
+    padding:96px 5% 34px;
+    gap:28px;
   }
 
-  .brand-section{
-    padding-left:5%;
-    padding-right:5%;
+  h1{
+    font-size:47px;
+    letter-spacing:-2px;
   }
 
-  .brand-box{
-    padding:42px 24px;
+  .hero p{
+    font-size:17px;
+    margin-bottom:22px;
   }
 
-  .stats,
-  .cards,
-  .reviews,
-  .form{
+  .hero-actions{
+    display:grid;
     grid-template-columns:1fr;
-  }
-
-  .metro{
-    margin-left:5%;
-    margin-right:5%;
-    flex-direction:column;
-  }
-
-  .contact{
-    margin-left:5%;
-    margin-right:5%;
-    padding:44px 24px;
-  }
-
-  .hero-photo{
-    min-height:460px;
+    gap:10px;
+    margin-bottom:18px;
   }
 
   .btn{
     width:100%;
+    padding:15px 18px;
+  }
+
+  .trust{
+    gap:10px;
+    font-size:13px;
+  }
+
+  .hero-photo{
+    min-height:280px;
+    border-radius:28px;
+    border:7px solid white;
+    transform:none;
+  }
+
+  .quick-info{
+    margin:0 5% 20px;
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+
+  .info-card{
+    padding:18px;
+    border-radius:22px;
+  }
+
+  .info-card strong{
+    font-size:20px;
+  }
+
+  .section{
+    padding:48px 5%;
+  }
+
+  .section-title{
+    margin-bottom:24px;
+  }
+
+  h2{
+    font-size:36px;
+    letter-spacing:-1px;
+  }
+
+  .section-title p{
+    font-size:16px;
+  }
+
+  .featured{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
+  .feature-card{
+    padding:22px;
+    border-radius:24px;
+  }
+
+  .services-panel{
+    padding:18px;
+    border-radius:28px;
+  }
+
+  .category-nav{
+    top:63px;
+    overflow-x:auto;
+    flex-wrap:nowrap;
+    padding-bottom:12px;
+    margin-bottom:18px;
+    scrollbar-width:none;
+  }
+
+  .category-nav::-webkit-scrollbar{
+    display:none;
+  }
+
+  .category-nav a{
+    white-space:nowrap;
+    flex:none;
+  }
+
+  .service-group{
+    margin-bottom:22px;
+    scroll-margin-top:130px;
+  }
+
+  .group-title{
+    font-size:22px;
+  }
+
+  .item button{
+    padding:16px;
+    font-size:15px;
+  }
+
+  .inner{
+    padding:0 16px 17px;
+  }
+
+  .reviews{
+    grid-template-columns:1fr;
+  }
+
+  .contact{
+    margin:0 5% 30px;
+    padding:34px 20px;
+    border-radius:28px;
+  }
+
+  .form{
+    grid-template-columns:1fr;
+  }
+
+  .form textarea,
+  .form button{
+    grid-column:auto;
+  }
+
+  footer{
+    padding:24px 5% 95px;
   }
 }
 </style>
@@ -752,614 +813,321 @@ footer{
 <body>
 
 <header class="nav">
-
   <div class="logo">
     <img src="Nayana_logoonly.png" alt="Nayanna Medicina Estética">
   </div>
 
   <nav>
     <a href="#inicio">Inicio</a>
-    <a href="#marca">Marca</a>
-    <a href="#faciales">Faciales</a>
     <a href="#servicios">Servicios</a>
     <a href="#resenas">Reseñas</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
   <a href="#contacto" class="btn">Reservar</a>
-
 </header>
 
+<div class="mobile-bottom">
+  <a href="#inicio">Inicio</a>
+  <a href="#destacados">Top</a>
+  <a href="#servicios">Servicios</a>
+  <a class="cta" href="#contacto">Reservar</a>
+</div>
+
 <section id="inicio" class="hero">
-
   <div class="reveal">
-
-    <div class="eyebrow">
-      ✨ Centro médico estético en Rivas-Vaciamadrid
-    </div>
+    <div class="eyebrow">✨ Medicina estética en Rivas-Vaciamadrid</div>
 
     <h1>
       Piel limpia,<br>
-      mirada fresca,<br>
+      rasgos frescos,<br>
       <span class="serif">belleza natural.</span>
     </h1>
 
     <p>
-      Tratamientos faciales, higiene facial avanzada y medicina estética para realzar tu belleza
-      con resultados naturales, visibles y personalizados.
+      Tratamientos faciales, corporales y medicina estética para realzar tu imagen con resultados naturales, visibles y personalizados.
     </p>
 
     <div class="hero-actions">
       <a href="#contacto" class="btn">Reservar cita</a>
-      <a href="#faciales" class="btn secondary">Ver faciales</a>
+      <a href="#servicios" class="btn secondary">Ver servicios</a>
     </div>
 
     <div class="trust">
       <div><strong>+8 años</strong> de experiencia</div>
       <div><strong>+500</strong> pacientes satisfechos</div>
-      <div><strong>Trato cercano</strong> y profesional</div>
+      <div><strong>5 min</strong> Metro Rivas Futura</div>
     </div>
-
   </div>
 
   <div class="hero-photo reveal"></div>
-
 </section>
 
-<section id="marca" class="brand-section reveal">
-
-  <div class="brand-box">
-
-    <div class="brand-logo">
-      <img src="LOGO_NAYANNA.png" alt="Logo Nayanna Medicina Estética">
-    </div>
-
-    <div class="brand-content">
-
-      <span class="tag">Identidad Nayanna</span>
-
-      <h2>
-        Medicina estética con un enfoque
-        <span class="serif">natural, elegante y personalizado.</span>
-      </h2>
-
-      <p>
-        En Nayanna Medicina Estética cada tratamiento está pensado para potenciar
-        la belleza natural de cada paciente. Unimos diagnóstico, aparatología,
-        técnica profesional y una atención cercana para crear una experiencia
-        cuidada desde el primer momento.
-      </p>
-
-      <div class="trust">
-        <div><strong>Resultados naturales</strong></div>
-        <div><strong>Tratamientos premium</strong></div>
-        <div><strong>Atención personalizada</strong></div>
-      </div>
-
-    </div>
-
+<div class="quick-info reveal">
+  <div class="info-card">
+    <strong>+8 años</strong>
+    Experiencia en estética avanzada.
   </div>
-
-</section>
-
-<div class="metro reveal">
-  <div><span>Ubicación:</span> Rivas-Vaciamadrid, Madrid</div>
-  <div>A 5 minutos andando de Metro Rivas Futura</div>
+  <div class="info-card">
+    <strong>+500 pacientes</strong>
+    Reseñas reales y trato cercano.
+  </div>
+  <div class="info-card">
+    <strong>Rivas Futura</strong>
+    A 5 minutos andando del metro.
+  </div>
 </div>
 
-<section class="stats reveal">
-
-  <div class="stat">
-    <h3><span class="counter" data-target="8">0</span>+</h3>
-    <p>Años de experiencia</p>
-  </div>
-
-  <div class="stat">
-    <h3><span class="counter" data-target="500">0</span>+</h3>
-    <p>Pacientes satisfechos</p>
-  </div>
-
-  <div class="stat">
-    <h3><span class="counter" data-target="40">0</span>+</h3>
-    <p>Tratamientos disponibles</p>
-  </div>
-
-</section>
-
-<section id="faciales" class="section">
-
+<section id="destacados" class="section">
   <div class="section-title reveal">
-    <span class="tag">Tratamientos faciales</span>
-    <h2>Resultados visibles con una experiencia premium.</h2>
+    <span class="tag">Servicios destacados</span>
+    <h2>Los tratamientos más buscados para verte mejor desde la primera visita.</h2>
     <p>
-      Higiene facial avanzada, hidratación, luminosidad y tratamientos personalizados
-      para potenciar la belleza natural de tu piel.
+      Destacamos limpiezas faciales y tratamientos clásicos de medicina estética para convertir más rápido desde móvil.
     </p>
   </div>
 
-  <div class="cards">
-
-    <article class="card dark reveal">
+  <div class="featured">
+    <article class="feature-card dark reveal">
       <h3>Limpieza Ritual Sublime</h3>
-      <div class="duration">1 hora 30 minutos</div>
+      <div class="duration">1h 30min</div>
       <div class="price">55 €</div>
-      <p>
-        Purifica, oxigena y aporta frescura inmediata.
-        Ideal para pieles jóvenes que buscan prevenir imperfecciones.
-      </p>
+      <p>Purifica, oxigena y aporta frescura inmediata. Ideal para piel joven, imperfecciones y mantenimiento facial.</p>
     </article>
 
-    <article class="card reveal">
-      <h3>Punta de Diamante</h3>
-      <div class="duration">1 hora 30 minutos</div>
+    <article class="feature-card reveal">
+      <h3>Hidrafacial</h3>
+      <div class="duration">1h 30min</div>
       <div class="price">79 €</div>
-      <p>
-        Microdermoabrasión para exfoliar en profundidad,
-        mejorar textura y aportar luminosidad.
-      </p>
+      <p>Espátula ultrasónica, cóctel vitamínico y mascarilla regeneradora para oxigenar y revitalizar.</p>
     </article>
 
-    <article class="card reveal">
-      <h3>Ritual Hidrafacial</h3>
-      <div class="duration">1 hora 30 minutos</div>
-      <div class="price">79 €</div>
-      <p>
-        Higiene facial hidratante y revitalizante
-        para una piel más fresca, limpia y luminosa.
-      </p>
+    <article class="feature-card reveal">
+      <h3>Aumento de labios</h3>
+      <div class="duration">30 min</div>
+      <div class="price">290 €</div>
+      <p>Tratamiento clásico para hidratar, perfilar y aportar volumen manteniendo un resultado natural.</p>
     </article>
 
+    <article class="feature-card reveal">
+      <h3>Neuromoduladores</h3>
+      <div class="duration">20 min</div>
+      <div class="price">320 €</div>
+      <p>Corrección de arrugas en frente, entrecejo y patas de gallo para un rostro más descansado.</p>
+    </article>
   </div>
-
 </section>
 
 <section id="servicios" class="section">
-
   <div class="section-title reveal">
-    <span class="tag">Servicios desplegables</span>
-    <h2>Consulta cada tratamiento.</h2>
+    <span class="tag">Todos los servicios</span>
+    <h2>Tratamientos ordenados por categorías.</h2>
     <p>
-      Pulsa sobre cada servicio para ver descripción, duración y precio.
+      En móvil puedes moverte rápido por categorías y abrir solo el tratamiento que te interesa.
     </p>
   </div>
 
-  <div class="accordion reveal">
+  <div class="services-panel reveal">
 
-    <div class="item">
-      <button>
-        Limpieza Ritual Sublime
-        <span>+</span>
-      </button>
+    <div class="category-nav">
+      <a href="#facial">Facial</a>
+      <a href="#medicina">Medicina estética</a>
+      <a href="#laser">Láser</a>
+      <a href="#corporal">Corporal</a>
+      <a href="#micropigmentacion">Micropigmentación</a>
+      <a href="#cera">Cera</a>
+    </div>
 
-      <div class="content">
-        <div class="inner">
-          ✨ Purifica, oxigena y aporta frescura inmediata a la piel.
-          <br><br>
-          Ideal para pieles jóvenes que buscan prevenir imperfecciones,
-          mantener un rostro limpio y luminoso y empezar a cuidar su belleza natural.
-          <div class="price">55 € · 1h 30min</div>
+    <div id="facial" class="service-group">
+      <h3 class="group-title">Tratamientos faciales</h3>
+      <div class="accordion">
+
+        <div class="item">
+          <button><div>Limpieza Ritual Sublime <small>1h 30min · 55 €</small></div><span>+</span></button>
+          <div class="content"><div class="inner">Purifica, oxigena y aporta frescura inmediata. Ideal para pieles jóvenes que buscan prevenir imperfecciones y mantener el rostro limpio y luminoso.<br><span class="inner-price">55 €</span></div></div>
         </div>
+
+        <div class="item">
+          <button><div>Limpieza Ritual con punta de diamante <small>1h 30min · 79 €</small></div><span>+</span></button>
+          <div class="content"><div class="inner">Microdermoabrasión para exfoliar en profundidad, mejorar textura y atenuar manchas leves o marquitas de acné.<br><span class="inner-price">79 €</span></div></div>
+        </div>
+
+        <div class="item">
+          <button><div>Limpieza Ritual Hidrafacial <small>1h 30min · 79 €</small></div><span>+</span></button>
+          <div class="content"><div class="inner">Higiene con espátula ultrasónica, cóctel vitamínico y mascarilla regeneradora. Oxigena, descongestiona y revitaliza la piel.<br><span class="inner-price">79 €</span></div></div>
+        </div>
+
+        <div class="item">
+          <button><div>Radiofrecuencia facial Symmed <small>desde 65 €</small></div><span>+</span></button>
+          <div class="content"><div class="inner">Tratamiento para mejorar firmeza, luminosidad y aspecto general del rostro. Disponible total face & neck, facial o por zonas.<br><span class="inner-price">desde 65 €</span></div></div>
+        </div>
+
+        <div class="item">
+          <button><div>Dermapen facial / Microneedling <small>1 hora · 80 €</small></div><span>+</span></button>
+          <div class="content"><div class="inner">Microneedling facial para mejorar textura, poro, marcas, luminosidad y calidad general de la piel.<br><span class="inner-price">80 €</span></div></div>
+        </div>
+
+        <div class="item">
+          <button><div>Tratamientos personalizados <small>desde 65 €</small></div><span>+</span></button>
+          <div class="content"><div class="inner">Acné, luminosidad vitamina C, pieles grasas, pieles sensibles y rojeces, Ritual de Oro 24K y BB Make.<br><span class="inner-price">desde 65 €</span></div></div>
+        </div>
+
+        <div class="item">
+          <button><div>Tratamientos faciales combinados <small>desde 68 €</small></div><span>+</span></button>
+          <div class="content"><div class="inner">Ondas de choque + radiofrecuencia, Dermapen + radiofrecuencia, microdermoabrasión + Dermapen + fototerapia y presoterapia + radiofrecuencia ocular.<br><span class="inner-price">desde 68 €</span></div></div>
+        </div>
+
+        <div class="item">
+          <button><div>Plasmapen facial <small>desde 250 €</small></div><span>+</span></button>
+          <div class="content"><div class="inner">Párpados, zona peribucal, cuello, óvalo, pómulos, frente, elevación de cejas, interior de brazo e interior de pierna.<br><span class="inner-price">desde 250 €</span></div></div>
+        </div>
+
       </div>
     </div>
 
-    <div class="item">
-      <button>
-        Limpieza Ritual con punta de diamante
-        <span>+</span>
-      </button>
+    <div id="medicina" class="service-group">
+      <h3 class="group-title">Medicina estética</h3>
+      <div class="accordion">
 
-      <div class="content">
-        <div class="inner">
-          Higiene con punta de diamante o microdermoabrasión
-          para exfoliar en profundidad, mejorar textura y atenuar manchas leves.
-          <br><br>
-          Ideal para pieles apagadas, engrosadas o con impurezas.
-          <div class="price">79 € · 1h 30min</div>
+        <div class="item">
+          <button><div>Aumento de labios <small>30 min · 290 €</small></div><span>+</span></button>
+          <div class="content"><div class="inner">Tratamiento para hidratar, perfilar y aportar volumen a los labios, buscando un resultado natural.<br><span class="inner-price">290 €</span></div></div>
         </div>
+
+        <div class="item">
+          <button><div>Neuromoduladores <small>20 min · 320 €</small></div><span>+</span></button>
+          <div class="content"><div class="inner">Corrección de arrugas en frente, entrecejo y patas de gallo para suavizar la expresión.<br><span class="inner-price">320 €</span></div></div>
+        </div>
+
+        <div class="item">
+          <button><div>Tercio medio <small>desde 150 €</small></div><span>+</span></button>
+          <div class="content"><div class="inner">Proyección de pómulos, rinomodelación, ojeras con ácido hialurónico e hialuronidasa.<br><span class="inner-price">desde 150 €</span></div></div>
+        </div>
+
+        <div class="item">
+          <button><div>Redensificación facial y cuello <small>desde 400 €</small></div><span>+</span></button>
+          <div class="content"><div class="inner">Redensificación facial Ellansé, cuello, mesoterapia facial, cuello y escote, e inductor de colágeno Radiesse.<br><span class="inner-price">desde 400 €</span></div></div>
+        </div>
+
+        <div class="item">
+          <button><div>Lifting y rejuvenecimiento facial <small>desde 150 €</small></div><span>+</span></button>
+          <div class="content"><div class="inner">Lipoláser facial, K Láser para manchas faciales y tightening facial con Endolaser.<br><span class="inner-price">desde 150 €</span></div></div>
+        </div>
+
       </div>
     </div>
 
-    <div class="item">
-      <button>
-        Limpieza Ritual Hidrafacial
-        <span>+</span>
-      </button>
+    <div id="laser" class="service-group">
+      <h3 class="group-title">Depilación láser diodo</h3>
+      <div class="accordion">
 
-      <div class="content">
-        <div class="inner">
-          Higiene con espátula ultrasónica, cóctel vitamínico
-          y mascarilla regeneradora.
-          <br><br>
-          Oxigena, descongestiona y revitaliza la piel.
-          Especialmente indicada para pieles sensibles, grasas o con tendencia a la congestión.
-          <div class="price">79 € · 1h 30min</div>
+        <div class="item">
+          <button><div>Zonas mini <small>15 min · 20 €</small></div><span>+</span></button>
+          <div class="content"><div class="inner">Labio superior o inferior, patillas, mentón, dedos, manos, pies, areolas, línea del escote, línea de alba, pómulo o dorso de manos.<br><span class="inner-price">20 €</span></div></div>
         </div>
+
+        <div class="item">
+          <button><div>Zonas pequeñas <small>desde 20 €</small></div><span>+</span></button>
+          <div class="content"><div class="inner">Medios brazos, medias piernas, cara completa, axilas, barba, nuca, hombros, lumbar, espalda superior, pies o manos completas.<br><span class="inner-price">desde 20 €</span></div></div>
+        </div>
+
+        <div class="item">
+          <button><div>Zonas medianas <small>desde 30 €</small></div><span>+</span></button>
+          <div class="content"><div class="inner">Glúteos, ingles brasileñas, abdomen, pecho, pubis completo y zona perianal.<br><span class="inner-price">desde 30 €</span></div></div>
+        </div>
+
+        <div class="item">
+          <button><div>Zonas grandes y packs <small>desde 40 €</small></div><span>+</span></button>
+          <div class="content"><div class="inner">Piernas completas, brazos completos, espalda completa y packs combinados con pubis, ingles o axilas.<br><span class="inner-price">desde 40 €</span></div></div>
+        </div>
+
       </div>
     </div>
 
-    <div class="item">
-      <button>
-        Drenaje Facial Remodelante
-        <span>+</span>
-      </button>
+    <div id="corporal" class="service-group">
+      <h3 class="group-title">Corporal, bienestar y aparatología</h3>
+      <div class="accordion">
 
-      <div class="content">
-        <div class="inner">
-          Masaje facial enfocado en descongestionar, remodelar y aportar sensación de ligereza al rostro.
-          <div class="price">Consultar · 1 hora</div>
+        <div class="item">
+          <button><div>Aparatología corporal <small>desde 45 €</small></div><span>+</span></button>
+          <div class="content"><div class="inner">Zionic, ondas de choque Vmat-Pro, radiofrecuencia Symmed y presoterapia.<br><span class="inner-price">desde 45 €</span></div></div>
         </div>
+
+        <div class="item">
+          <button><div>Tratamientos corporales combinados <small>1h 30min · 150 €</small></div><span>+</span></button>
+          <div class="content"><div class="inner">Zionic + Vmat-Pro o radiofrecuencia Symmed + Vmat-Pro para tratamientos corporales más completos.<br><span class="inner-price">150 €</span></div></div>
+        </div>
+
+        <div class="item">
+          <button><div>Exfoliación y masaje corporal <small>1h 30min · 60 €</small></div><span>+</span></button>
+          <div class="content"><div class="inner">Tratamiento corporal para renovar la piel, suavizarla y complementar el cuidado con masaje.<br><span class="inner-price">60 €</span></div></div>
+        </div>
+
+        <div class="item">
+          <button><div>Masaje relajante <small>1 hora · 55 €</small></div><span>+</span></button>
+          <div class="content"><div class="inner">Tratamiento manual relajante para liberar tensión y disfrutar de un momento de cuidado personal.<br><span class="inner-price">55 €</span></div></div>
+        </div>
+
+        <div class="item">
+          <button><div>Microdermis estrías <small>desde 149 €</small></div><span>+</span></button>
+          <div class="content"><div class="inner">Tratamiento de estrías método Microderme. Disponible 1, 3 o 5 sesiones.<br><span class="inner-price">desde 149 €</span></div></div>
+        </div>
+
       </div>
     </div>
 
-    <div class="item">
-      <button>
-        Masaje relajante
-        <span>+</span>
-      </button>
+    <div id="micropigmentacion" class="service-group">
+      <h3 class="group-title">Micropigmentación y capilar</h3>
+      <div class="accordion">
 
-      <div class="content">
-        <div class="inner">
-          Tratamiento manual relajante para liberar tensión, mejorar el bienestar y disfrutar de un momento de cuidado personal.
-          <div class="price">55 € · 1 hora</div>
+        <div class="item">
+          <button><div>Micropigmentación <small>desde 250 €</small></div><span>+</span></button>
+          <div class="content"><div class="inner">Microshading de cejas, micropigmentación de labios, eyeliner, micropigmentación y retoques.<br><span class="inner-price">desde 250 €</span></div></div>
         </div>
+
+        <div class="item">
+          <button><div>Plasma capilar <small>1 hora · 150 €</small></div><span>+</span></button>
+          <div class="content"><div class="inner">Tratamiento capilar con plasma.<br><span class="inner-price">150 €</span></div></div>
+        </div>
+
       </div>
     </div>
 
-    <div class="item">
-      <button>
-        Exfoliación y masaje corporal
-        <span>+</span>
-      </button>
+    <div id="cera" class="service-group">
+      <h3 class="group-title">Depilación con cera</h3>
+      <div class="accordion">
 
-      <div class="content">
-        <div class="inner">
-          Tratamiento corporal para renovar la piel, suavizarla y complementar el cuidado con un masaje relajante.
-          <div class="price">60 € · 1h 30min</div>
+        <div class="item">
+          <button><div>Cejas y facial <small>desde 6 €</small></div><span>+</span></button>
+          <div class="content"><div class="inner">Cejas con cera o pinzas, labio superior, facial, orejas, nariz y zonas específicas.<br><span class="inner-price">desde 6 €</span></div></div>
         </div>
-      </div>
-    </div>
 
-    <div class="item">
-      <button>
-        Depilación de cejas y facial
-        <span>+</span>
-      </button>
-
-      <div class="content">
-        <div class="inner">
-          Servicios de depilación de cejas con cera o pinzas, labio superior y depilación facial.
-          <div class="price">desde 6 €</div>
+        <div class="item">
+          <button><div>Corporal mujer <small>desde 9 €</small></div><span>+</span></button>
+          <div class="content"><div class="inner">Axilas, brazos, piernas, ingles brasileñas, pubis completo, zona perianal y glúteos.<br><span class="inner-price">desde 9 €</span></div></div>
         </div>
-      </div>
-    </div>
 
-    <div class="item">
-      <button>
-        Depilación con cera corporal
-        <span>+</span>
-      </button>
-
-      <div class="content">
-        <div class="inner">
-          Depilación con cera para axilas, brazos, piernas, ingles, pubis, glúteos, pecho, abdomen, espalda y otras zonas.
-          <div class="price">desde 9 €</div>
+        <div class="item">
+          <button><div>Corporal hombre <small>desde 8 €</small></div><span>+</span></button>
+          <div class="content"><div class="inner">Brazos, piernas, espalda, hombros, pecho, abdomen, orejas, nariz y axilas.<br><span class="inner-price">desde 8 €</span></div></div>
         </div>
-      </div>
-    </div>
 
-    <div class="item">
-      <button>
-        Depilación láser diodo zonas mini
-        <span>+</span>
-      </button>
-
-      <div class="content">
-        <div class="inner">
-          Labio superior o inferior, patillas, mentón, dedos, manos, pies, areolas, línea del escote, línea de alba, pómulo o dorso de manos.
-          <div class="price">20 € · 15 min</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <button>
-        Depilación láser diodo zonas pequeñas
-        <span>+</span>
-      </button>
-
-      <div class="content">
-        <div class="inner">
-          Medios brazos, medias piernas, cara completa, axilas, barba, nuca, hombros, lumbar, zona superior de espalda, pies o manos completas.
-          <div class="price">desde 20 €</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <button>
-        Depilación láser diodo zonas medianas
-        <span>+</span>
-      </button>
-
-      <div class="content">
-        <div class="inner">
-          Glúteos, ingles brasileñas, abdomen, pecho, pubis completo y zona perianal.
-          <div class="price">desde 30 €</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <button>
-        Depilación láser diodo zonas grandes y packs
-        <span>+</span>
-      </button>
-
-      <div class="content">
-        <div class="inner">
-          Piernas completas, brazos completos, espalda completa y packs combinados con pubis, ingles o axilas.
-          <div class="price">desde 40 €</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <button>
-        Micropigmentación
-        <span>+</span>
-      </button>
-
-      <div class="content">
-        <div class="inner">
-          Microshading de cejas, micropigmentación de labios, eyeliner, micropigmentación y retoques.
-          <div class="price">desde 250 €</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <button>
-        K Láser
-        <span>+</span>
-      </button>
-
-      <div class="content">
-        <div class="inner">
-          Terapia de tejidos, tratamiento de heridas, úlceras, liquen plano, inflamación, edema, congestión, dolor y acné.
-          <div class="price">60 €</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <button>
-        Diagnóstico Facial Avanzado con Focuskin
-        <span>+</span>
-      </button>
-
-      <div class="content">
-        <div class="inner">
-          Diagnóstico facial y corporal para analizar necesidades y orientar el tratamiento más adecuado.
-          <div class="price">Diagnóstico facial 30 € · Otros desde 1 €</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <button>
-        Aparatología corporal
-        <span>+</span>
-      </button>
-
-      <div class="content">
-        <div class="inner">
-          Zionic, ondas de choque Vmat-Pro, radiofrecuencia Symmed y presoterapia.
-          <div class="price">desde 45 €</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <button>
-        Tratamientos corporales combinados
-        <span>+</span>
-      </button>
-
-      <div class="content">
-        <div class="inner">
-          Zionic + Vmat-Pro o radiofrecuencia Symmed + Vmat-Pro para tratamientos corporales más completos.
-          <div class="price">150 € · 1h 30min</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <button>
-        Aparatología facial
-        <span>+</span>
-      </button>
-
-      <div class="content">
-        <div class="inner">
-          Radiofrecuencia facial Symmed, radiofrecuencia por zonas, ondas de choque facial y Dermapen o microneedling.
-          <div class="price">desde 65 €</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <button>
-        Wellness y exfoliación
-        <span>+</span>
-      </button>
-
-      <div class="content">
-        <div class="inner">
-          Desintoxicación orgánica profunda con contrastes térmicos, peeling e hidratación.
-          <div class="price">desde 55 €</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <button>
-        Tratamientos personalizados
-        <span>+</span>
-      </button>
-
-      <div class="content">
-        <div class="inner">
-          Acné, luminosidad vitamina C, pieles grasas, pieles sensibles y rojeces, Ritual de Oro 24K y BB Make.
-          <div class="price">desde 65 €</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <button>
-        Tratamientos faciales combinados
-        <span>+</span>
-      </button>
-
-      <div class="content">
-        <div class="inner">
-          Ondas de choque + radiofrecuencia, Dermapen + radiofrecuencia, microdermoabrasión + Dermapen + fototerapia y presoterapia + radiofrecuencia ocular.
-          <div class="price">desde 68 €</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <button>
-        Plasmapen facial
-        <span>+</span>
-      </button>
-
-      <div class="content">
-        <div class="inner">
-          Tratamientos en párpado superior, párpado superior e inferior, zona peribucal, cuello, óvalo, pómulos, frente, elevación de cejas, interior de brazo e interior de pierna.
-          <div class="price">desde 250 €</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <button>
-        Tratamientos faciales clásicos
-        <span>+</span>
-      </button>
-
-      <div class="content">
-        <div class="inner">
-          Tratamiento de ojeras, hidratación + perfilado de labios, proyección de mentón, fibromas, verrugas, queratosis seborreica y enzimas recombinantes.
-          <div class="price">desde 120 €</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <button>
-        Tratamientos capilares
-        <span>+</span>
-      </button>
-
-      <div class="content">
-        <div class="inner">
-          Plasma capilar.
-          <div class="price">150 € · 1 hora</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <button>
-        Microdermis · Tratamiento de estrías
-        <span>+</span>
-      </button>
-
-      <div class="content">
-        <div class="inner">
-          Tratamiento de estrías método Microderme.
-          <div class="price">1 sesión 149 € · 3 sesiones 410 € · 5 sesiones 690 €</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <button>
-        Tercio medio
-        <span>+</span>
-      </button>
-
-      <div class="content">
-        <div class="inner">
-          Proyección de pómulos, rinomodelación, ojeras con ácido hialurónico e hialuronidasa.
-          <div class="price">desde 150 €</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <button>
-        Tercio superior
-        <span>+</span>
-      </button>
-
-      <div class="content">
-        <div class="inner">
-          Neuromoduladores para frente, entrecejo y patas de gallo. Ácido hialurónico.
-          <div class="price">desde 320 €</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <button>
-        Lifting y rejuvenecimiento facial
-        <span>+</span>
-      </button>
-
-      <div class="content">
-        <div class="inner">
-          Lipoláser facial, K Láser para manchas faciales y tightening facial con Endolaser.
-          <div class="price">desde 150 €</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="item">
-      <button>
-        Medicina estética
-        <span>+</span>
-      </button>
-
-      <div class="content">
-        <div class="inner">
-          Aumento de labios, neuromoduladores, redensificación facial Ellansé, mesoterapia facial, inductor de colágeno Radiesse y escleroterapia.
-          <div class="price">desde 100 €</div>
-        </div>
       </div>
     </div>
 
   </div>
-
 </section>
 
 <section id="resenas" class="section">
-
   <div class="section-title reveal">
     <span class="tag">Reseñas verificadas</span>
     <h2>Experiencias reales de pacientes.</h2>
   </div>
 
   <div class="reviews">
-
     <article class="review reveal">
       <div class="stars">★★★★★</div>
-      <p>
-        “Me hice un tratamiento de radiofrecuencia, asombrada por el resultado.
-        Mi mirada se abrió muchísimo y me veo radiante.”
-      </p>
+      <p>“Me hice un tratamiento de radiofrecuencia, asombrada por el resultado. Mi mirada se abrió muchísimo y me veo radiante.”</p>
       <div class="review-footer">
         <strong>Pek🐰❤️</strong>
         <span>hace 6 días</span>
@@ -1368,10 +1136,7 @@ footer{
 
     <article class="review reveal">
       <div class="stars">★★★★★</div>
-      <p>
-        “Salí encantada con la limpieza facial.
-        La piel se quedó súper limpia, luminosa y suave.”
-      </p>
+      <p>“Salí encantada con la limpieza facial. La piel se quedó súper limpia, luminosa y suave desde el primer momento.”</p>
       <div class="review-footer">
         <strong>Laura</strong>
         <span>hace 6 días</span>
@@ -1380,65 +1145,44 @@ footer{
 
     <article class="review reveal">
       <div class="stars">★★★★★</div>
-      <p>
-        “Nayanna es muy atenta y profesional.
-        El tratamiento facial fue muy completo.”
-      </p>
+      <p>“Nayanna es muy atenta y profesional. El tratamiento facial fue muy completo, dejándome la cara limpia e hidratada.”</p>
       <div class="review-footer">
         <strong>Mika</strong>
         <span>hace 9 días</span>
       </div>
     </article>
-
   </div>
-
 </section>
 
 <section id="contacto" class="contact reveal">
-
-  <span class="tag">Formulario de contacto</span>
-
-  <h2>Reserva o solicita información.</h2>
-
-  <p>
-    Rellena tus datos y el servicio que te interesa.
-  </p>
+  <span class="tag">Reserva rápida</span>
+  <h2>Solicita tu cita.</h2>
+  <p>Rellena tus datos y el servicio que te interesa.</p>
 
   <form class="form">
-
     <input type="text" placeholder="Nombre completo">
-
     <input type="email" placeholder="Correo electrónico">
-
     <input type="tel" placeholder="Número de teléfono">
 
     <select>
       <option>Servicio solicitado</option>
       <option>Limpieza Ritual Sublime</option>
-      <option>Punta de Diamante</option>
-      <option>Ritual Hidrafacial</option>
-      <option>Drenaje Facial Remodelante</option>
-      <option>Masaje relajante</option>
+      <option>Limpieza Ritual Hidrafacial</option>
+      <option>Aumento de labios</option>
+      <option>Neuromoduladores</option>
+      <option>Radiofrecuencia facial</option>
+      <option>Dermapen facial</option>
       <option>Depilación láser diodo</option>
       <option>Micropigmentación</option>
-      <option>Aparatología facial</option>
-      <option>Medicina estética</option>
+      <option>Aparatología corporal</option>
       <option>Otro tratamiento</option>
     </select>
 
     <textarea placeholder="Mensaje"></textarea>
 
-    <button type="button" class="btn">
-      Enviar solicitud
-    </button>
-
+    <button type="button" class="btn">Enviar solicitud</button>
   </form>
-
 </section>
-
-<a href="#contacto" class="btn floating">
-  Reservar
-</a>
 
 <footer>
   <p>© 2026 Nayanna Medicina Estética</p>
@@ -1447,58 +1191,19 @@ footer{
 
 <script>
 const reveals=document.querySelectorAll(".reveal");
-
 const revealObserver=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("active");
-    }
+    if(entry.isIntersecting) entry.target.classList.add("active");
   });
 },{threshold:.12});
-
 reveals.forEach(el=>revealObserver.observe(el));
 
-const counters=document.querySelectorAll(".counter");
-
-const animateCounter=counter=>{
-  const target=Number(counter.dataset.target);
-  let current=0;
-  const inc=target/90;
-
-  const update=()=>{
-    current+=inc;
-
-    if(current<target){
-      counter.textContent=Math.ceil(current);
-      requestAnimationFrame(update);
-    }else{
-      counter.textContent=target;
-    }
-  };
-
-  update();
-};
-
-const counterObserver=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      animateCounter(entry.target);
-      counterObserver.unobserve(entry.target);
-    }
-  });
-},{threshold:.7});
-
-counters.forEach(c=>counterObserver.observe(c));
-
 const items=document.querySelectorAll(".item");
-
 items.forEach(item=>{
-
   const btn=item.querySelector("button");
   const content=item.querySelector(".content");
 
   btn.addEventListener("click",()=>{
-
     const open=item.classList.contains("active");
 
     items.forEach(i=>{
@@ -1510,23 +1215,18 @@ items.forEach(item=>{
       item.classList.add("active");
       content.style.maxHeight=content.scrollHeight+"px";
     }
-
   });
-
 });
 
 window.addEventListener("scroll",()=>{
-
   const nav=document.querySelector(".nav");
-
   if(window.scrollY>80){
-    nav.style.background="rgba(247,243,238,.96)";
+    nav.style.background="rgba(247,243,238,.97)";
     nav.style.boxShadow="0 12px 34px rgba(0,0,0,.08)";
   }else{
-    nav.style.background="rgba(247,243,238,.82)";
+    nav.style.background="rgba(247,243,238,.9)";
     nav.style.boxShadow="none";
   }
-
 });
 </script>
 

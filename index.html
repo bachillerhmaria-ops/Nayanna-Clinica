@@ -39,7 +39,7 @@ img{max-width:100%;display:block}
   display:flex;
   justify-content:space-between;
   align-items:center;
-  background:rgba(247,243,238,.9);
+  background:rgba(247,243,238,.92);
   backdrop-filter:blur(20px);
   border-bottom:1px solid var(--line);
   transition:.3s;
@@ -120,6 +120,10 @@ img{max-width:100%;display:block}
 .btn.secondary:hover{
   color:var(--turq2);
   border-color:var(--turq);
+}
+
+.mobile-top-services{
+  display:none;
 }
 
 .mobile-bottom{
@@ -320,7 +324,6 @@ h2{
 
 .feature-card h3,
 .feature-card p,
-.feature-card .price,
 .feature-card .duration{
   position:relative;
   z-index:1;
@@ -335,19 +338,10 @@ h2{
   color:#777;
   font-weight:850;
   font-size:14px;
-  margin-bottom:8px;
-}
-
-.feature-card.dark .duration{color:#d6d6d6}
-
-.price{
-  color:var(--turq2);
-  font-size:23px;
-  font-weight:950;
   margin-bottom:14px;
 }
 
-.feature-card.dark .price{color:var(--turq)}
+.feature-card.dark .duration{color:#d6d6d6}
 
 .feature-card p{
   color:#555;
@@ -356,6 +350,24 @@ h2{
 }
 
 .feature-card.dark p{color:#ddd}
+
+.feature-note{
+  margin-top:16px;
+  position:relative;
+  z-index:2;
+  display:inline-flex;
+  padding:9px 12px;
+  border-radius:999px;
+  background:#f3f3f3;
+  font-size:12px;
+  font-weight:950;
+  color:#333;
+}
+
+.feature-card.dark .feature-note{
+  background:rgba(255,255,255,.12);
+  color:var(--turq);
+}
 
 .services-panel{
   background:white;
@@ -466,15 +478,21 @@ h2{
 .inner{
   padding:0 20px 20px;
   color:#555;
-  line-height:1.65;
+  line-height:1.7;
+}
+
+.inner strong{
+  color:#111;
 }
 
 .inner-price{
-  margin-top:12px;
-  display:inline-block;
+  margin-top:16px;
+  display:block;
   color:var(--turq2);
   font-weight:950;
-  font-size:18px;
+  font-size:19px;
+  padding-top:14px;
+  border-top:1px solid rgba(0,0,0,.08);
 }
 
 .reviews{
@@ -613,7 +631,7 @@ footer{
 
 @media(max-width:820px){
   body{
-    padding-bottom:78px;
+    padding-bottom:86px;
   }
 
   .nav{
@@ -624,51 +642,72 @@ footer{
     height:42px;
   }
 
-  .nav nav{
-    display:none;
-  }
-
+  .nav nav,
   .nav .btn{
     display:none;
   }
 
-  .mobile-bottom{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:6px;
+  .mobile-top-services{
+    display:block;
     position:fixed;
-    bottom:0;
+    top:63px;
     left:0;
     width:100%;
+    z-index:998;
+    background:rgba(247,243,238,.96);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(0,0,0,.08);
+    padding:8px 5% 10px;
+  }
+
+  .mobile-top-services select{
+    width:100%;
+    padding:14px 16px;
+    border-radius:18px;
+    border:1px solid rgba(0,0,0,.12);
+    background:white;
+    color:#111;
+    font-size:15px;
+    font-weight:900;
+    outline:none;
+    box-shadow:0 10px 28px rgba(0,0,0,.06);
+  }
+
+  .mobile-bottom{
+    display:block;
+    position:fixed;
+    left:0;
+    bottom:0;
+    width:100%;
     z-index:1000;
-    background:rgba(255,255,255,.94);
+    padding:10px 5% 12px;
+    background:rgba(255,255,255,.96);
     backdrop-filter:blur(18px);
     border-top:1px solid rgba(0,0,0,.1);
-    padding:9px 8px 11px;
   }
 
   .mobile-bottom a{
-    text-align:center;
-    font-size:11px;
-    font-weight:950;
-    padding:9px 5px;
-    border-radius:16px;
-    background:#f4f4f4;
-  }
-
-  .mobile-bottom a.cta{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:15px 18px;
+    border-radius:20px;
     background:var(--black);
     color:white;
+    font-size:15px;
+    font-weight:950;
+    box-shadow:0 16px 44px rgba(0,0,0,.20);
   }
 
   .hero{
     min-height:auto;
-    padding:96px 5% 34px;
-    gap:28px;
+    padding:122px 5% 30px;
+    gap:26px;
   }
 
   h1{
-    font-size:47px;
+    font-size:44px;
     letter-spacing:-2px;
   }
 
@@ -695,14 +734,14 @@ footer{
   }
 
   .hero-photo{
-    min-height:280px;
+    min-height:250px;
     border-radius:28px;
     border:7px solid white;
     transform:none;
   }
 
   .quick-info{
-    margin:0 5% 20px;
+    margin:0 5% 18px;
     grid-template-columns:1fr;
     gap:10px;
   }
@@ -717,7 +756,7 @@ footer{
   }
 
   .section{
-    padding:48px 5%;
+    padding:44px 5%;
   }
 
   .section-title{
@@ -725,7 +764,7 @@ footer{
   }
 
   h2{
-    font-size:36px;
+    font-size:35px;
     letter-spacing:-1px;
   }
 
@@ -749,26 +788,12 @@ footer{
   }
 
   .category-nav{
-    top:63px;
-    overflow-x:auto;
-    flex-wrap:nowrap;
-    padding-bottom:12px;
-    margin-bottom:18px;
-    scrollbar-width:none;
-  }
-
-  .category-nav::-webkit-scrollbar{
     display:none;
-  }
-
-  .category-nav a{
-    white-space:nowrap;
-    flex:none;
   }
 
   .service-group{
     margin-bottom:22px;
-    scroll-margin-top:130px;
+    scroll-margin-top:126px;
   }
 
   .group-title{
@@ -824,14 +849,25 @@ footer{
     <a href="#contacto">Contacto</a>
   </nav>
 
-  <a href="#contacto" class="btn">Reservar</a>
+  <a href="https://wa.me/34675875546" target="_blank" class="btn">Reservar</a>
 </header>
 
+<div class="mobile-top-services">
+  <select id="mobileServiceSelect">
+    <option value="">Ver tratamientos</option>
+    <option value="#destacados">Tratamientos destacados</option>
+    <option value="#facial">Facial</option>
+    <option value="#medicina">Medicina estética</option>
+    <option value="#laser">Láser diodo</option>
+    <option value="#corporal">Corporal y bienestar</option>
+    <option value="#micropigmentacion">Micropigmentación</option>
+    <option value="#cera">Depilación con cera</option>
+    <option value="#contacto">Formulario de contacto</option>
+  </select>
+</div>
+
 <div class="mobile-bottom">
-  <a href="#inicio">Inicio</a>
-  <a href="#destacados">Top</a>
-  <a href="#servicios">Servicios</a>
-  <a class="cta" href="#contacto">Reservar</a>
+  <a href="https://wa.me/34675875546" target="_blank">Reservar por WhatsApp · 675 87 55 46</a>
 </div>
 
 <section id="inicio" class="hero">
@@ -849,7 +885,7 @@ footer{
     </p>
 
     <div class="hero-actions">
-      <a href="#contacto" class="btn">Reservar cita</a>
+      <a href="https://wa.me/34675875546" target="_blank" class="btn">Reservar por WhatsApp</a>
       <a href="#servicios" class="btn secondary">Ver servicios</a>
     </div>
 
@@ -883,37 +919,37 @@ footer{
     <span class="tag">Servicios destacados</span>
     <h2>Los tratamientos más buscados para verte mejor desde la primera visita.</h2>
     <p>
-      Destacamos limpiezas faciales y tratamientos clásicos de medicina estética para convertir más rápido desde móvil.
+      Destacamos limpiezas faciales y tratamientos clásicos de medicina estética. Los precios se muestran al abrir cada tratamiento.
     </p>
   </div>
 
   <div class="featured">
     <article class="feature-card dark reveal">
       <h3>Limpieza Ritual Sublime</h3>
-      <div class="duration">1h 30min</div>
-      <div class="price">55 €</div>
-      <p>Purifica, oxigena y aporta frescura inmediata. Ideal para piel joven, imperfecciones y mantenimiento facial.</p>
+      <div class="duration">Higiene facial · 1h 30min</div>
+      <p>Ritual facial purificante para piel más limpia, fresca y luminosa.</p>
+      <span class="feature-note">Ver precio en servicios</span>
     </article>
 
     <article class="feature-card reveal">
       <h3>Hidrafacial</h3>
-      <div class="duration">1h 30min</div>
-      <div class="price">79 €</div>
-      <p>Espátula ultrasónica, cóctel vitamínico y mascarilla regeneradora para oxigenar y revitalizar.</p>
+      <div class="duration">Higiene avanzada · 1h 30min</div>
+      <p>Tratamiento para oxigenar, descongestionar y revitalizar la piel.</p>
+      <span class="feature-note">Ver precio en servicios</span>
     </article>
 
     <article class="feature-card reveal">
       <h3>Aumento de labios</h3>
-      <div class="duration">30 min</div>
-      <div class="price">290 €</div>
-      <p>Tratamiento clásico para hidratar, perfilar y aportar volumen manteniendo un resultado natural.</p>
+      <div class="duration">Medicina estética · 30 min</div>
+      <p>Perfilado, hidratación y volumen natural para realzar los labios.</p>
+      <span class="feature-note">Ver precio en servicios</span>
     </article>
 
     <article class="feature-card reveal">
       <h3>Neuromoduladores</h3>
-      <div class="duration">20 min</div>
-      <div class="price">320 €</div>
-      <p>Corrección de arrugas en frente, entrecejo y patas de gallo para un rostro más descansado.</p>
+      <div class="duration">Medicina estética · 20 min</div>
+      <p>Suaviza arrugas de expresión en frente, entrecejo y patas de gallo.</p>
+      <span class="feature-note">Ver precio en servicios</span>
     </article>
   </div>
 </section>
@@ -923,7 +959,7 @@ footer{
     <span class="tag">Todos los servicios</span>
     <h2>Tratamientos ordenados por categorías.</h2>
     <p>
-      En móvil puedes moverte rápido por categorías y abrir solo el tratamiento que te interesa.
+      Abre cada tratamiento para leer la descripción completa y consultar el precio al final.
     </p>
   </div>
 
@@ -943,43 +979,75 @@ footer{
       <div class="accordion">
 
         <div class="item">
-          <button><div>Limpieza Ritual Sublime <small>1h 30min · 55 €</small></div><span>+</span></button>
-          <div class="content"><div class="inner">Purifica, oxigena y aporta frescura inmediata. Ideal para pieles jóvenes que buscan prevenir imperfecciones y mantener el rostro limpio y luminoso.<br><span class="inner-price">55 €</span></div></div>
+          <button><div>Limpieza Ritual Sublime <small>Higiene facial · 1h 30min</small></div><span>+</span></button>
+          <div class="content"><div class="inner">
+            <strong>Tratamiento ideal para empezar a cuidar la piel desde la base.</strong><br><br>
+            Purifica, oxigena y aporta frescura inmediata. Está pensado para pieles jóvenes o para personas que buscan mantener el rostro limpio, luminoso y con menos imperfecciones. Ayuda a retirar impurezas, mejorar la sensación de suavidad y dejar la piel preparada para absorber mejor los activos cosméticos.
+            <span class="inner-price">Precio: 55 €</span>
+          </div></div>
         </div>
 
         <div class="item">
-          <button><div>Limpieza Ritual con punta de diamante <small>1h 30min · 79 €</small></div><span>+</span></button>
-          <div class="content"><div class="inner">Microdermoabrasión para exfoliar en profundidad, mejorar textura y atenuar manchas leves o marquitas de acné.<br><span class="inner-price">79 €</span></div></div>
+          <button><div>Limpieza Ritual con punta de diamante <small>Microdermoabrasión · 1h 30min</small></div><span>+</span></button>
+          <div class="content"><div class="inner">
+            <strong>Higiene facial más profunda para renovar la textura de la piel.</strong><br><br>
+            La punta de diamante realiza una exfoliación mecánica controlada que ayuda a eliminar células muertas, suavizar la superficie cutánea y mejorar el aspecto de manchas leves, poros visibles o pequeñas marcas. Es una opción muy interesante para pieles apagadas, engrosadas, con impurezas o con marquitas de acné.
+            <span class="inner-price">Precio: 79 €</span>
+          </div></div>
         </div>
 
         <div class="item">
-          <button><div>Limpieza Ritual Hidrafacial <small>1h 30min · 79 €</small></div><span>+</span></button>
-          <div class="content"><div class="inner">Higiene con espátula ultrasónica, cóctel vitamínico y mascarilla regeneradora. Oxigena, descongestiona y revitaliza la piel.<br><span class="inner-price">79 €</span></div></div>
+          <button><div>Limpieza Ritual Hidrafacial <small>Higiene avanzada · 1h 30min</small></div><span>+</span></button>
+          <div class="content"><div class="inner">
+            <strong>Ritual facial para oxigenar, descongestionar y revitalizar.</strong><br><br>
+            Combina espátula ultrasónica, cóctel vitamínico y mascarilla regeneradora. Está especialmente indicado para pieles sensibles, grasas o con tendencia a la congestión. Deja una sensación de piel limpia, fresca, hidratada y con efecto buena cara.
+            <span class="inner-price">Precio: 79 €</span>
+          </div></div>
         </div>
 
         <div class="item">
-          <button><div>Radiofrecuencia facial Symmed <small>desde 65 €</small></div><span>+</span></button>
-          <div class="content"><div class="inner">Tratamiento para mejorar firmeza, luminosidad y aspecto general del rostro. Disponible total face & neck, facial o por zonas.<br><span class="inner-price">desde 65 €</span></div></div>
+          <button><div>Radiofrecuencia facial Symmed <small>Reafirmación facial</small></div><span>+</span></button>
+          <div class="content"><div class="inner">
+            <strong>Tratamiento reafirmante para mejorar firmeza y luminosidad.</strong><br><br>
+            La radiofrecuencia facial ayuda a trabajar la calidad de la piel, la sensación de firmeza y el aspecto general del rostro. Es una opción muy demandada cuando se busca mejorar la flacidez leve, aportar luminosidad y conseguir una apariencia más descansada sin cambiar la expresión natural.
+            <span class="inner-price">Precio: desde 65 €</span>
+          </div></div>
         </div>
 
         <div class="item">
-          <button><div>Dermapen facial / Microneedling <small>1 hora · 80 €</small></div><span>+</span></button>
-          <div class="content"><div class="inner">Microneedling facial para mejorar textura, poro, marcas, luminosidad y calidad general de la piel.<br><span class="inner-price">80 €</span></div></div>
+          <button><div>Dermapen facial / Microneedling <small>Textura, poro y marcas</small></div><span>+</span></button>
+          <div class="content"><div class="inner">
+            <strong>Tratamiento facial para estimular la renovación cutánea.</strong><br><br>
+            El microneedling con Dermapen trabaja mediante microcanales controlados para mejorar la textura de la piel, el aspecto del poro, pequeñas marcas, luminosidad y calidad cutánea. Es ideal para pieles que buscan una mejora global y progresiva.
+            <span class="inner-price">Precio: 80 €</span>
+          </div></div>
         </div>
 
         <div class="item">
-          <button><div>Tratamientos personalizados <small>desde 65 €</small></div><span>+</span></button>
-          <div class="content"><div class="inner">Acné, luminosidad vitamina C, pieles grasas, pieles sensibles y rojeces, Ritual de Oro 24K y BB Make.<br><span class="inner-price">desde 65 €</span></div></div>
+          <button><div>Tratamientos personalizados <small>Acné, vitamina C, piel sensible</small></div><span>+</span></button>
+          <div class="content"><div class="inner">
+            <strong>Protocolos adaptados al estado real de tu piel.</strong><br><br>
+            Incluye tratamientos para acné, luminosidad con vitamina C, pieles grasas, pieles sensibles y rojeces, Ritual de Oro 24K y BB Make. Se elige el protocolo según las necesidades de cada paciente para buscar un resultado más natural, equilibrado y visible.
+            <span class="inner-price">Precio: desde 65 €</span>
+          </div></div>
         </div>
 
         <div class="item">
-          <button><div>Tratamientos faciales combinados <small>desde 68 €</small></div><span>+</span></button>
-          <div class="content"><div class="inner">Ondas de choque + radiofrecuencia, Dermapen + radiofrecuencia, microdermoabrasión + Dermapen + fototerapia y presoterapia + radiofrecuencia ocular.<br><span class="inner-price">desde 68 €</span></div></div>
+          <button><div>Tratamientos faciales combinados <small>Aparatología + técnica facial</small></div><span>+</span></button>
+          <div class="content"><div class="inner">
+            <strong>Combinaciones para potenciar el resultado en una misma sesión.</strong><br><br>
+            Incluye ondas de choque + radiofrecuencia, Dermapen + radiofrecuencia, microdermoabrasión + Dermapen + fototerapia y presoterapia + radiofrecuencia ocular. Son opciones pensadas para trabajar varias necesidades a la vez: textura, luminosidad, firmeza, drenaje o mirada cansada.
+            <span class="inner-price">Precio: desde 68 €</span>
+          </div></div>
         </div>
 
         <div class="item">
-          <button><div>Plasmapen facial <small>desde 250 €</small></div><span>+</span></button>
-          <div class="content"><div class="inner">Párpados, zona peribucal, cuello, óvalo, pómulos, frente, elevación de cejas, interior de brazo e interior de pierna.<br><span class="inner-price">desde 250 €</span></div></div>
+          <button><div>Plasmapen facial <small>Párpados, cuello, pómulos y más</small></div><span>+</span></button>
+          <div class="content"><div class="inner">
+            <strong>Tratamiento localizado para zonas específicas de flacidez o textura.</strong><br><br>
+            Disponible en párpado superior, párpado superior e inferior, zona peribucal, cuello, óvalo, pómulos, frente, elevación de cejas, interior de brazo e interior de pierna. Se orienta a trabajar zonas concretas donde se busca una mejora visible y localizada.
+            <span class="inner-price">Precio: desde 250 €</span>
+          </div></div>
         </div>
 
       </div>
@@ -990,28 +1058,48 @@ footer{
       <div class="accordion">
 
         <div class="item">
-          <button><div>Aumento de labios <small>30 min · 290 €</small></div><span>+</span></button>
-          <div class="content"><div class="inner">Tratamiento para hidratar, perfilar y aportar volumen a los labios, buscando un resultado natural.<br><span class="inner-price">290 €</span></div></div>
+          <button><div>Aumento de labios <small>Perfilado, hidratación y volumen</small></div><span>+</span></button>
+          <div class="content"><div class="inner">
+            <strong>Tratamiento para realzar los labios de forma natural.</strong><br><br>
+            Pensado para aportar hidratación, definición y volumen manteniendo la armonía del rostro. El objetivo es conseguir un labio más bonito y jugoso sin perder naturalidad, adaptando el resultado a la anatomía y preferencias de cada paciente.
+            <span class="inner-price">Precio: 290 €</span>
+          </div></div>
         </div>
 
         <div class="item">
-          <button><div>Neuromoduladores <small>20 min · 320 €</small></div><span>+</span></button>
-          <div class="content"><div class="inner">Corrección de arrugas en frente, entrecejo y patas de gallo para suavizar la expresión.<br><span class="inner-price">320 €</span></div></div>
+          <button><div>Neuromoduladores <small>Frente, entrecejo y patas de gallo</small></div><span>+</span></button>
+          <div class="content"><div class="inner">
+            <strong>Tratamiento clásico para suavizar arrugas de expresión.</strong><br><br>
+            Se utiliza para relajar de forma controlada las zonas de frente, entrecejo y patas de gallo. Ayuda a conseguir un aspecto más descansado, fresco y rejuvenecido, manteniendo una expresión natural.
+            <span class="inner-price">Precio: 320 €</span>
+          </div></div>
         </div>
 
         <div class="item">
-          <button><div>Tercio medio <small>desde 150 €</small></div><span>+</span></button>
-          <div class="content"><div class="inner">Proyección de pómulos, rinomodelación, ojeras con ácido hialurónico e hialuronidasa.<br><span class="inner-price">desde 150 €</span></div></div>
+          <button><div>Tercio medio <small>Pómulos, rinomodelación y ojeras</small></div><span>+</span></button>
+          <div class="content"><div class="inner">
+            <strong>Tratamientos para armonizar y proyectar el rostro.</strong><br><br>
+            Incluye proyección de pómulos, rinomodelación, ojeras con ácido hialurónico e hialuronidasa. Se trabaja la estructura facial buscando equilibrio, frescura y un resultado proporcionado.
+            <span class="inner-price">Precio: desde 150 €</span>
+          </div></div>
         </div>
 
         <div class="item">
-          <button><div>Redensificación facial y cuello <small>desde 400 €</small></div><span>+</span></button>
-          <div class="content"><div class="inner">Redensificación facial Ellansé, cuello, mesoterapia facial, cuello y escote, e inductor de colágeno Radiesse.<br><span class="inner-price">desde 400 €</span></div></div>
+          <button><div>Redensificación facial y cuello <small>Ellansé, mesoterapia y Radiesse</small></div><span>+</span></button>
+          <div class="content"><div class="inner">
+            <strong>Tratamientos enfocados en calidad de piel y estímulo de colágeno.</strong><br><br>
+            Incluye redensificación facial Ellansé, redensificación facial + cuello, mesoterapia facial con cuello y escote, e inductor de colágeno Radiesse. Son tratamientos pensados para mejorar firmeza, densidad y aspecto global de la piel.
+            <span class="inner-price">Precio: desde 400 €</span>
+          </div></div>
         </div>
 
         <div class="item">
-          <button><div>Lifting y rejuvenecimiento facial <small>desde 150 €</small></div><span>+</span></button>
-          <div class="content"><div class="inner">Lipoláser facial, K Láser para manchas faciales y tightening facial con Endolaser.<br><span class="inner-price">desde 150 €</span></div></div>
+          <button><div>Lifting y rejuvenecimiento facial <small>Endolaser, manchas y tensado</small></div><span>+</span></button>
+          <div class="content"><div class="inner">
+            <strong>Opciones avanzadas para rejuvenecimiento y mejora facial.</strong><br><br>
+            Incluye lipoláser facial, K Láser para manchas faciales y tightening facial con Endolaser. Tratamientos indicados para pacientes que buscan una mejora más avanzada del rostro, manchas o tensado facial.
+            <span class="inner-price">Precio: desde 150 €</span>
+          </div></div>
         </div>
 
       </div>
@@ -1022,23 +1110,39 @@ footer{
       <div class="accordion">
 
         <div class="item">
-          <button><div>Zonas mini <small>15 min · 20 €</small></div><span>+</span></button>
-          <div class="content"><div class="inner">Labio superior o inferior, patillas, mentón, dedos, manos, pies, areolas, línea del escote, línea de alba, pómulo o dorso de manos.<br><span class="inner-price">20 €</span></div></div>
+          <button><div>Zonas mini <small>Labio, patillas, mentón, dedos...</small></div><span>+</span></button>
+          <div class="content"><div class="inner">
+            <strong>Depilación láser para zonas pequeñas y muy localizadas.</strong><br><br>
+            Incluye labio superior o inferior, patillas, mentón, dedos, manos, pies, areolas, línea del escote, línea de alba, pómulo o dorso de manos. Sesiones rápidas para zonas concretas.
+            <span class="inner-price">Precio: 20 €</span>
+          </div></div>
         </div>
 
         <div class="item">
-          <button><div>Zonas pequeñas <small>desde 20 €</small></div><span>+</span></button>
-          <div class="content"><div class="inner">Medios brazos, medias piernas, cara completa, axilas, barba, nuca, hombros, lumbar, espalda superior, pies o manos completas.<br><span class="inner-price">desde 20 €</span></div></div>
+          <button><div>Zonas pequeñas <small>Axilas, cara, barba, nuca...</small></div><span>+</span></button>
+          <div class="content"><div class="inner">
+            <strong>Tratamientos láser para zonas pequeñas o intermedias.</strong><br><br>
+            Incluye medios brazos, medias piernas, cara completa, axilas, barba, nuca, hombros, lumbar, espalda superior, pies completos y manos completas.
+            <span class="inner-price">Precio: desde 20 €</span>
+          </div></div>
         </div>
 
         <div class="item">
-          <button><div>Zonas medianas <small>desde 30 €</small></div><span>+</span></button>
-          <div class="content"><div class="inner">Glúteos, ingles brasileñas, abdomen, pecho, pubis completo y zona perianal.<br><span class="inner-price">desde 30 €</span></div></div>
+          <button><div>Zonas medianas <small>Glúteos, ingles, abdomen, pecho...</small></div><span>+</span></button>
+          <div class="content"><div class="inner">
+            <strong>Depilación láser para zonas de mayor superficie.</strong><br><br>
+            Incluye glúteos, ingles brasileñas, abdomen, pecho, pubis completo y zona perianal. Sesiones pensadas para reducir progresivamente el vello y mejorar comodidad.
+            <span class="inner-price">Precio: desde 30 €</span>
+          </div></div>
         </div>
 
         <div class="item">
-          <button><div>Zonas grandes y packs <small>desde 40 €</small></div><span>+</span></button>
-          <div class="content"><div class="inner">Piernas completas, brazos completos, espalda completa y packs combinados con pubis, ingles o axilas.<br><span class="inner-price">desde 40 €</span></div></div>
+          <button><div>Zonas grandes y packs <small>Piernas, brazos, espalda y combinados</small></div><span>+</span></button>
+          <div class="content"><div class="inner">
+            <strong>Opciones completas y packs para optimizar la sesión.</strong><br><br>
+            Incluye piernas completas, brazos completos, espalda completa y packs combinados con pubis, ingles o axilas. Ideal para tratar varias zonas en una sola visita.
+            <span class="inner-price">Precio: desde 40 €</span>
+          </div></div>
         </div>
 
       </div>
@@ -1049,28 +1153,48 @@ footer{
       <div class="accordion">
 
         <div class="item">
-          <button><div>Aparatología corporal <small>desde 45 €</small></div><span>+</span></button>
-          <div class="content"><div class="inner">Zionic, ondas de choque Vmat-Pro, radiofrecuencia Symmed y presoterapia.<br><span class="inner-price">desde 45 €</span></div></div>
+          <button><div>Aparatología corporal <small>Zionic, Vmat-Pro, Symmed, presoterapia</small></div><span>+</span></button>
+          <div class="content"><div class="inner">
+            <strong>Tratamientos corporales con aparatología avanzada.</strong><br><br>
+            Incluye Zionic, ondas de choque Vmat-Pro, radiofrecuencia Symmed y presoterapia. Se utilizan según objetivo: firmeza, drenaje, textura, retención de líquidos o mejora corporal general.
+            <span class="inner-price">Precio: desde 45 €</span>
+          </div></div>
         </div>
 
         <div class="item">
-          <button><div>Tratamientos corporales combinados <small>1h 30min · 150 €</small></div><span>+</span></button>
-          <div class="content"><div class="inner">Zionic + Vmat-Pro o radiofrecuencia Symmed + Vmat-Pro para tratamientos corporales más completos.<br><span class="inner-price">150 €</span></div></div>
+          <button><div>Tratamientos corporales combinados <small>Protocolos completos</small></div><span>+</span></button>
+          <div class="content"><div class="inner">
+            <strong>Combinaciones para potenciar resultados corporales.</strong><br><br>
+            Incluye Zionic + Vmat-Pro o radiofrecuencia Symmed + Vmat-Pro. Son protocolos más completos que trabajan varias capas y necesidades del tejido en una misma sesión.
+            <span class="inner-price">Precio: 150 €</span>
+          </div></div>
         </div>
 
         <div class="item">
-          <button><div>Exfoliación y masaje corporal <small>1h 30min · 60 €</small></div><span>+</span></button>
-          <div class="content"><div class="inner">Tratamiento corporal para renovar la piel, suavizarla y complementar el cuidado con masaje.<br><span class="inner-price">60 €</span></div></div>
+          <button><div>Exfoliación y masaje corporal <small>Renovación y bienestar</small></div><span>+</span></button>
+          <div class="content"><div class="inner">
+            <strong>Tratamiento para renovar la piel y relajar el cuerpo.</strong><br><br>
+            Combina exfoliación corporal y masaje para dejar la piel más suave, luminosa y cuidada. Ideal como tratamiento de bienestar o complemento a otros protocolos corporales.
+            <span class="inner-price">Precio: 60 €</span>
+          </div></div>
         </div>
 
         <div class="item">
-          <button><div>Masaje relajante <small>1 hora · 55 €</small></div><span>+</span></button>
-          <div class="content"><div class="inner">Tratamiento manual relajante para liberar tensión y disfrutar de un momento de cuidado personal.<br><span class="inner-price">55 €</span></div></div>
+          <button><div>Masaje relajante <small>Bienestar y desconexión</small></div><span>+</span></button>
+          <div class="content"><div class="inner">
+            <strong>Momento de cuidado personal y relajación.</strong><br><br>
+            Tratamiento manual orientado a liberar tensión, favorecer la desconexión y mejorar la sensación general de bienestar. Una opción perfecta para quienes buscan pausa, calma y cuidado.
+            <span class="inner-price">Precio: 55 €</span>
+          </div></div>
         </div>
 
         <div class="item">
-          <button><div>Microdermis estrías <small>desde 149 €</small></div><span>+</span></button>
-          <div class="content"><div class="inner">Tratamiento de estrías método Microderme. Disponible 1, 3 o 5 sesiones.<br><span class="inner-price">desde 149 €</span></div></div>
+          <button><div>Microdermis estrías <small>Método Microderme</small></div><span>+</span></button>
+          <div class="content"><div class="inner">
+            <strong>Tratamiento específico para estrías.</strong><br><br>
+            Método Microderme disponible en sesiones individuales o bonos. Se orienta a trabajar la apariencia de estrías y mejorar visualmente la calidad de la zona tratada.
+            <span class="inner-price">Precio: desde 149 €</span>
+          </div></div>
         </div>
 
       </div>
@@ -1081,13 +1205,21 @@ footer{
       <div class="accordion">
 
         <div class="item">
-          <button><div>Micropigmentación <small>desde 250 €</small></div><span>+</span></button>
-          <div class="content"><div class="inner">Microshading de cejas, micropigmentación de labios, eyeliner, micropigmentación y retoques.<br><span class="inner-price">desde 250 €</span></div></div>
+          <button><div>Micropigmentación <small>Cejas, labios y eyeliner</small></div><span>+</span></button>
+          <div class="content"><div class="inner">
+            <strong>Tratamientos para realzar facciones de forma duradera.</strong><br><br>
+            Incluye microshading de cejas o efecto polvo, micropigmentación de labios, eyeliner, micropigmentación y retoques. Ideal para definir, armonizar y ahorrar tiempo en la rutina diaria.
+            <span class="inner-price">Precio: desde 250 €</span>
+          </div></div>
         </div>
 
         <div class="item">
-          <button><div>Plasma capilar <small>1 hora · 150 €</small></div><span>+</span></button>
-          <div class="content"><div class="inner">Tratamiento capilar con plasma.<br><span class="inner-price">150 €</span></div></div>
+          <button><div>Plasma capilar <small>Tratamiento capilar</small></div><span>+</span></button>
+          <div class="content"><div class="inner">
+            <strong>Tratamiento capilar orientado al cuidado del cabello.</strong><br><br>
+            Sesión de plasma capilar para trabajar el cuero cabelludo y apoyar protocolos de fortalecimiento o cuidado capilar.
+            <span class="inner-price">Precio: 150 €</span>
+          </div></div>
         </div>
 
       </div>
@@ -1098,18 +1230,30 @@ footer{
       <div class="accordion">
 
         <div class="item">
-          <button><div>Cejas y facial <small>desde 6 €</small></div><span>+</span></button>
-          <div class="content"><div class="inner">Cejas con cera o pinzas, labio superior, facial, orejas, nariz y zonas específicas.<br><span class="inner-price">desde 6 €</span></div></div>
+          <button><div>Cejas y facial <small>Cera, pinzas y zonas pequeñas</small></div><span>+</span></button>
+          <div class="content"><div class="inner">
+            <strong>Depilación precisa para cejas y rostro.</strong><br><br>
+            Incluye cejas con cera o pinzas, labio superior, facial, orejas, nariz y zonas específicas. Una opción rápida para mantener el rostro limpio y cuidado.
+            <span class="inner-price">Precio: desde 6 €</span>
+          </div></div>
         </div>
 
         <div class="item">
-          <button><div>Corporal mujer <small>desde 9 €</small></div><span>+</span></button>
-          <div class="content"><div class="inner">Axilas, brazos, piernas, ingles brasileñas, pubis completo, zona perianal y glúteos.<br><span class="inner-price">desde 9 €</span></div></div>
+          <button><div>Corporal mujer <small>Axilas, brazos, piernas, ingles...</small></div><span>+</span></button>
+          <div class="content"><div class="inner">
+            <strong>Depilación corporal femenina con cera.</strong><br><br>
+            Incluye axilas, brazos, piernas, ingles brasileñas, pubis completo, zona perianal y glúteos. Servicios pensados para una depilación eficaz y rápida.
+            <span class="inner-price">Precio: desde 9 €</span>
+          </div></div>
         </div>
 
         <div class="item">
-          <button><div>Corporal hombre <small>desde 8 €</small></div><span>+</span></button>
-          <div class="content"><div class="inner">Brazos, piernas, espalda, hombros, pecho, abdomen, orejas, nariz y axilas.<br><span class="inner-price">desde 8 €</span></div></div>
+          <button><div>Corporal hombre <small>Brazos, espalda, pecho, abdomen...</small></div><span>+</span></button>
+          <div class="content"><div class="inner">
+            <strong>Depilación corporal masculina con cera.</strong><br><br>
+            Incluye brazos, piernas, espalda, hombros, pecho, abdomen, orejas, nariz y axilas. Una opción práctica para mantenimiento corporal.
+            <span class="inner-price">Precio: desde 8 €</span>
+          </div></div>
         </div>
 
       </div>
@@ -1218,13 +1362,23 @@ items.forEach(item=>{
   });
 });
 
+const mobileSelect=document.querySelector("#mobileServiceSelect");
+if(mobileSelect){
+  mobileSelect.addEventListener("change",()=>{
+    if(mobileSelect.value){
+      document.querySelector(mobileSelect.value).scrollIntoView({behavior:"smooth"});
+      mobileSelect.value="";
+    }
+  });
+}
+
 window.addEventListener("scroll",()=>{
   const nav=document.querySelector(".nav");
   if(window.scrollY>80){
     nav.style.background="rgba(247,243,238,.97)";
     nav.style.boxShadow="0 12px 34px rgba(0,0,0,.08)";
   }else{
-    nav.style.background="rgba(247,243,238,.9)";
+    nav.style.background="rgba(247,243,238,.92)";
     nav.style.boxShadow="none";
   }
 });
